@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/car_base-master/src
+CMAKE_SOURCE_DIR = /home/ubuntu/fyp/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/car_base-master/build
+CMAKE_BINARY_DIR = /home/ubuntu/fyp/build
 
 # Utility rule file for rosgraph_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build: rosgraph_ms
 .PHONY : ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 
 ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/ubuntu/car_base-master/build/ps4-bot && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/ubuntu/fyp/build/ps4-bot && $(CMAKE_COMMAND) -P CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 
 ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/ubuntu/car_base-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/car_base-master/src /home/ubuntu/car_base-master/src/ps4-bot /home/ubuntu/car_base-master/build /home/ubuntu/car_base-master/build/ps4-bot /home/ubuntu/car_base-master/build/ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/fyp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/fyp/src /home/ubuntu/fyp/src/ps4-bot /home/ubuntu/fyp/build /home/ubuntu/fyp/build/ps4-bot /home/ubuntu/fyp/build/ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ps4-bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
 

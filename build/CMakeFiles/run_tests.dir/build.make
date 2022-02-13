@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/car_base-master/src
+CMAKE_SOURCE_DIR = /home/ubuntu/fyp/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/car_base-master/build
+CMAKE_BINARY_DIR = /home/ubuntu/fyp/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/ubuntu/car_base-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/car_base-master/src /home/ubuntu/car_base-master/src /home/ubuntu/car_base-master/build /home/ubuntu/car_base-master/build /home/ubuntu/car_base-master/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/fyp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/fyp/src /home/ubuntu/fyp/src /home/ubuntu/fyp/build /home/ubuntu/fyp/build /home/ubuntu/fyp/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

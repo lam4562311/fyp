@@ -1,4 +1,4 @@
-prefix=/home/ubuntu/car_base-master/devel
+prefix=/home/ubuntu/fyp/devel
 
 Name: ps4-bot
 Description: Description of ps4-bot

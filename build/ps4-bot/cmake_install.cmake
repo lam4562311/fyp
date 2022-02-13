@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/car_base-master/src/ps4-bot
+# Install script for directory: /home/ubuntu/fyp/src/ps4-bot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/car_base-master/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/fyp/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/car_base-master/build/ps4-bot/catkin_generated/installspace/ps4-bot.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/fyp/build/ps4-bot/catkin_generated/installspace/ps4-bot.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4-bot/cmake" TYPE FILE FILES
-    "/home/ubuntu/car_base-master/build/ps4-bot/catkin_generated/installspace/ps4-botConfig.cmake"
-    "/home/ubuntu/car_base-master/build/ps4-bot/catkin_generated/installspace/ps4-botConfig-version.cmake"
+    "/home/ubuntu/fyp/build/ps4-bot/catkin_generated/installspace/ps4-botConfig.cmake"
+    "/home/ubuntu/fyp/build/ps4-bot/catkin_generated/installspace/ps4-botConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4-bot" TYPE FILE FILES "/home/ubuntu/car_base-master/src/ps4-bot/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4-bot" TYPE FILE FILES "/home/ubuntu/fyp/src/ps4-bot/package.xml")
 endif()
 

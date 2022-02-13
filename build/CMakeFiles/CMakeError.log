@@ -1,10 +1,10 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/fyp/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_7c85d/fast && /usr/bin/make -f CMakeFiles/cmTC_7c85d.dir/build.make CMakeFiles/cmTC_7c85d.dir/build
-make[1]: Entering directory '/home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/ubuntu/fyp/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_7c85d.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7c85d.dir/src.c.o   -c /home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp/src.c
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7c85d.dir/src.c.o   -c /home/ubuntu/fyp/build/CMakeFiles/CMakeTmp/src.c
 Linking C executable cmTC_7c85d
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c85d.dir/link.txt --verbose=1
 /usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_7c85d.dir/src.c.o  -o cmTC_7c85d 
@@ -14,7 +14,7 @@ src.c:(.text+0x48): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x5c): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
 make[1]: *** [CMakeFiles/cmTC_7c85d.dir/build.make:87: cmTC_7c85d] Error 1
-make[1]: Leaving directory '/home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/ubuntu/fyp/build/CMakeFiles/CMakeTmp'
 make: *** [Makefile:121: cmTC_7c85d/fast] Error 2
 
 
@@ -39,10 +39,10 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/fyp/build/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/make cmTC_59d89/fast && /usr/bin/make -f CMakeFiles/cmTC_59d89.dir/build.make CMakeFiles/cmTC_59d89.dir/build
-make[1]: Entering directory '/home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp'
+make[1]: Entering directory '/home/ubuntu/fyp/build/CMakeFiles/CMakeTmp'
 Building C object CMakeFiles/cmTC_59d89.dir/CheckFunctionExists.c.o
 /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_59d89.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
 Linking C executable cmTC_59d89
@@ -51,7 +51,7 @@ Linking C executable cmTC_59d89
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
 make[1]: *** [CMakeFiles/cmTC_59d89.dir/build.make:87: cmTC_59d89] Error 1
-make[1]: Leaving directory '/home/ubuntu/car_base-master/build/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/ubuntu/fyp/build/CMakeFiles/CMakeTmp'
 make: *** [Makefile:121: cmTC_59d89/fast] Error 2
 
 

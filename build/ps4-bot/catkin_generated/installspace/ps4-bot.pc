@@ -1,4 +1,4 @@
-prefix=/home/ubuntu/car_base-master/install
+prefix=/home/ubuntu/fyp/install
 
 Name: ps4-bot
 Description: Description of ps4-bot

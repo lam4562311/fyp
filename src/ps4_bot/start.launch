@@ -6,6 +6,6 @@
   <node pkg="ps4_bot" type="joy2mbed.py" name="boat_controller" respawn="false" output="log"/>
   <node pkg="ps4_bot" type="navigate.py" name="navigation_controller" respawn="true" output="screen"/>
   <node pkg="ps4_bot" type="processing_navigation.py" name="navigation_processing_unit" respawn="true" output="screen"/>
-  <!-- <node pkg="ps4_bot" type="lidar_scan" name="lidar_scan_node" respawn="false" output="screen" /> -->
+  <node pkg="lidar_scan" type="lidar_processing.py" name="lidar_scan_processing_node" respawn="false" output="log" />
   <!-- launch-prefix="sudo -H" -->
 </launch>

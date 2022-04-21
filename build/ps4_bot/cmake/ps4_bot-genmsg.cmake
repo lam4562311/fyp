@@ -40,7 +40,7 @@ add_custom_target(_ps4_bot_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
 add_custom_target(_ps4_bot_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ps4_bot" "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" "geographic_msgs/GeoPoint:ps4_bot/vertices:geographic_msgs/BoundingBox"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ps4_bot" "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" "geographic_msgs/BoundingBox:ps4_bot/vertices:geographic_msgs/GeoPoint"
 )
 
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/processing_nav.srv" NAME_WE)
@@ -83,7 +83,7 @@ _generate_srv_cpp(ps4_bot
 _generate_srv_cpp(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_cpp(ps4_bot
@@ -156,7 +156,7 @@ _generate_srv_dart(ps4_bot
 _generate_srv_dart(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gendart_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_dart(ps4_bot
@@ -229,7 +229,7 @@ _generate_srv_eus(ps4_bot
 _generate_srv_eus(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_eus(ps4_bot
@@ -302,7 +302,7 @@ _generate_srv_lisp(ps4_bot
 _generate_srv_lisp(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_lisp(ps4_bot
@@ -375,7 +375,7 @@ _generate_srv_nodejs(ps4_bot
 _generate_srv_nodejs(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_nodejs(ps4_bot
@@ -448,7 +448,7 @@ _generate_srv_py(ps4_bot
 _generate_srv_py(ps4_bot
   "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ps4_bot
 )
 _generate_srv_py(ps4_bot

@@ -168,6 +168,66 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/rule
+
+# Convenience name for target.
+lidar_scan_generate_messages_py: lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/rule
+
+.PHONY : lidar_scan_generate_messages_py
+
+# fast build rule for target.
+lidar_scan_generate_messages_py/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_py.dir/build
+.PHONY : lidar_scan_generate_messages_py/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/rule
+
+# Convenience name for target.
+lidar_scan_gennodejs: lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/rule
+
+.PHONY : lidar_scan_gennodejs
+
+# fast build rule for target.
+lidar_scan_gennodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/build.make lidar_scan/CMakeFiles/lidar_scan_gennodejs.dir/build
+.PHONY : lidar_scan_gennodejs/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+lidar_scan_generate_messages_lisp: lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/rule
+
+.PHONY : lidar_scan_generate_messages_lisp
+
+# fast build rule for target.
+lidar_scan_generate_messages_lisp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_lisp.dir/build
+.PHONY : lidar_scan_generate_messages_lisp/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
+
+# Convenience name for target.
+lidar_scan_gendart: lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
+
+.PHONY : lidar_scan_gendart
+
+# fast build rule for target.
+lidar_scan_gendart/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_gendart.dir/build.make lidar_scan/CMakeFiles/lidar_scan_gendart.dir/build
+.PHONY : lidar_scan_gendart/fast
+
+# Convenience name for target.
 lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -196,6 +256,21 @@ roscpp_generate_messages_lisp: lidar_scan/CMakeFiles/roscpp_generate_messages_li
 roscpp_generate_messages_lisp/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make lidar_scan/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+lidar_scan_generate_messages_nodejs: lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/rule
+
+.PHONY : lidar_scan_generate_messages_nodejs
+
+# fast build rule for target.
+lidar_scan_generate_messages_nodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_nodejs.dir/build
+.PHONY : lidar_scan_generate_messages_nodejs/fast
 
 # Convenience name for target.
 lidar_scan/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -258,21 +333,6 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
-.PHONY : lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
-
-# Convenience name for target.
-lidar_scan_gendart: lidar_scan/CMakeFiles/lidar_scan_gendart.dir/rule
-
-.PHONY : lidar_scan_gendart
-
-# fast build rule for target.
-lidar_scan_gendart/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_gendart.dir/build.make lidar_scan/CMakeFiles/lidar_scan_gendart.dir/build
-.PHONY : lidar_scan_gendart/fast
-
-# Convenience name for target.
 lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -286,6 +346,36 @@ rosgraph_msgs_generate_messages_cpp: lidar_scan/CMakeFiles/rosgraph_msgs_generat
 rosgraph_msgs_generate_messages_cpp/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make lidar_scan/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
+
+# Convenience name for target.
+lidar_scan_generate_messages_dart: lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
+
+.PHONY : lidar_scan_generate_messages_dart
+
+# fast build rule for target.
+lidar_scan_generate_messages_dart/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/build
+.PHONY : lidar_scan_generate_messages_dart/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 lidar_scan/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
@@ -393,6 +483,21 @@ lidar_scan_generate_messages/fast:
 .PHONY : lidar_scan_generate_messages/fast
 
 # Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_genpy.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_genpy.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_genpy.dir/rule
+
+# Convenience name for target.
+lidar_scan_genpy: lidar_scan/CMakeFiles/lidar_scan_genpy.dir/rule
+
+.PHONY : lidar_scan_genpy
+
+# fast build rule for target.
+lidar_scan_genpy/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_genpy.dir/build.make lidar_scan/CMakeFiles/lidar_scan_genpy.dir/build
+.PHONY : lidar_scan_genpy/fast
+
+# Convenience name for target.
 lidar_scan/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : lidar_scan/CMakeFiles/roscpp_generate_messages_eus.dir/rule
@@ -406,6 +511,21 @@ roscpp_generate_messages_eus: lidar_scan/CMakeFiles/roscpp_generate_messages_eus
 roscpp_generate_messages_eus/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/roscpp_generate_messages_eus.dir/build.make lidar_scan/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_geneus.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_geneus.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_geneus.dir/rule
+
+# Convenience name for target.
+lidar_scan_geneus: lidar_scan/CMakeFiles/lidar_scan_geneus.dir/rule
+
+.PHONY : lidar_scan_geneus
+
+# fast build rule for target.
+lidar_scan_geneus/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_geneus.dir/build.make lidar_scan/CMakeFiles/lidar_scan_geneus.dir/build
+.PHONY : lidar_scan_geneus/fast
 
 # Convenience name for target.
 lidar_scan/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
@@ -453,6 +573,21 @@ sensor_msgs_generate_messages_lisp/fast:
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/rule
+
+# Convenience name for target.
+lidar_scan_genlisp: lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/rule
+
+.PHONY : lidar_scan_genlisp
+
+# fast build rule for target.
+lidar_scan_genlisp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/build.make lidar_scan/CMakeFiles/lidar_scan_genlisp.dir/build
+.PHONY : lidar_scan_genlisp/fast
+
+# Convenience name for target.
 lidar_scan/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 .PHONY : lidar_scan/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
@@ -498,6 +633,21 @@ geometry_msgs_generate_messages_py/fast:
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/rule
+
+# Convenience name for target.
+lidar_scan_gencpp: lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/rule
+
+.PHONY : lidar_scan_gencpp
+
+# fast build rule for target.
+lidar_scan_gencpp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/build.make lidar_scan/CMakeFiles/lidar_scan_gencpp.dir/build
+.PHONY : lidar_scan_gencpp/fast
+
+# Convenience name for target.
 lidar_scan/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : lidar_scan/CMakeFiles/std_msgs_generate_messages_py.dir/rule
@@ -528,34 +678,19 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+lidar_scan_generate_messages_eus: lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : lidar_scan_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make lidar_scan/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
-.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
-
-# Convenience name for target.
-lidar_scan_generate_messages_dart: lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/rule
-
-.PHONY : lidar_scan_generate_messages_dart
-
-# fast build rule for target.
-lidar_scan_generate_messages_dart/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/build
-.PHONY : lidar_scan_generate_messages_dart/fast
+lidar_scan_generate_messages_eus/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_eus.dir/build
+.PHONY : lidar_scan_generate_messages_eus/fast
 
 # Convenience name for target.
 lidar_scan/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
@@ -602,6 +737,36 @@ lidar_scan_node/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_node.dir/build.make lidar_scan/CMakeFiles/lidar_scan_node.dir/build
 .PHONY : lidar_scan_node/fast
 
+# Convenience name for target.
+lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/rule
+.PHONY : lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/rule
+
+# Convenience name for target.
+_lidar_scan_generate_messages_check_deps_range: lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/rule
+
+.PHONY : _lidar_scan_generate_messages_check_deps_range
+
+# fast build rule for target.
+_lidar_scan_generate_messages_check_deps_range/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/build.make lidar_scan/CMakeFiles/_lidar_scan_generate_messages_check_deps_range.dir/build
+.PHONY : _lidar_scan_generate_messages_check_deps_range/fast
+
+# Convenience name for target.
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/rule
+.PHONY : lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+lidar_scan_generate_messages_cpp: lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/rule
+
+.PHONY : lidar_scan_generate_messages_cpp
+
+# fast build rule for target.
+lidar_scan_generate_messages_cpp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/build.make lidar_scan/CMakeFiles/lidar_scan_generate_messages_cpp.dir/build
+.PHONY : lidar_scan_generate_messages_cpp/fast
+
 src/servo.o: src/servo.cpp.o
 
 .PHONY : src/servo.o
@@ -638,16 +803,22 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... lidar_scan_generate_messages_py"
+	@echo "... lidar_scan_gennodejs"
+	@echo "... lidar_scan_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... lidar_scan_gendart"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
+	@echo "... lidar_scan_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... install/strip"
-	@echo "... lidar_scan_gendart"
 	@echo "... test"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... lidar_scan_generate_messages_dart"
+	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
@@ -657,20 +828,25 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... lidar_scan_generate_messages"
 	@echo "... rebuild_cache"
+	@echo "... lidar_scan_genpy"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... lidar_scan_geneus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... lidar_scan_genlisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... lidar_scan_gencpp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... lidar_scan_generate_messages_dart"
+	@echo "... lidar_scan_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... lidar_scan_node"
+	@echo "... _lidar_scan_generate_messages_check_deps_range"
+	@echo "... lidar_scan_generate_messages_cpp"
 	@echo "... src/servo.o"
 	@echo "... src/servo.i"
 	@echo "... src/servo.s"

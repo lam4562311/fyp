@@ -482,10 +482,13 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/noetic/lib/libserial.so
 
 //Value Computed by CMake
 lidar_scan_BINARY_DIR:STATIC=/home/ubuntu/fyp/build/lidar_scan
+
+//The directory containing a CMake configuration file for lidar_scan.
+lidar_scan_DIR:PATH=/home/ubuntu/fyp/devel/share/lidar_scan/cmake
 
 //Value Computed by CMake
 lidar_scan_SOURCE_DIR:STATIC=/home/ubuntu/fyp/src/lidar_scan

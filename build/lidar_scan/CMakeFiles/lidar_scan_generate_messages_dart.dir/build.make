@@ -53,6 +53,16 @@ CMAKE_BINARY_DIR = /home/ubuntu/fyp/build
 # Include the progress variables for this target.
 include lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/progress.make
 
+lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart: /home/ubuntu/fyp/devel/share/gendart/ros/lidar_scan/range.dart
+
+
+/home/ubuntu/fyp/devel/share/gendart/ros/lidar_scan/range.dart: /home/ubuntu/fyp/src/gendart/scripts/gen_dart.py
+/home/ubuntu/fyp/devel/share/gendart/ros/lidar_scan/range.dart: /home/ubuntu/fyp/src/lidar_scan/msg/range.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Dart code from lidar_scan/range.msg"
+	cd /home/ubuntu/fyp/build/lidar_scan && ../catkin_generated/env_cached.sh /usr/bin/python3 /home/ubuntu/fyp/src/gendart/scripts/gen_dart.py /home/ubuntu/fyp/src/lidar_scan/msg/range.msg -Ilidar_scan:/home/ubuntu/fyp/src/lidar_scan/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p lidar_scan -o /home/ubuntu/fyp/devel/share/gendart/ros/lidar_scan
+
+lidar_scan_generate_messages_dart: lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart
+lidar_scan_generate_messages_dart: /home/ubuntu/fyp/devel/share/gendart/ros/lidar_scan/range.dart
 lidar_scan_generate_messages_dart: lidar_scan/CMakeFiles/lidar_scan_generate_messages_dart.dir/build.make
 
 .PHONY : lidar_scan_generate_messages_dart

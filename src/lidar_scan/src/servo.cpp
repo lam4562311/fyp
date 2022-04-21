@@ -110,12 +110,12 @@ int main(int argc, char** argv)
     sensor_msgs::LaserScan lidar_scan_data;
     
     lidar_scan_data.header.frame_id = "laser_frame";
-    lidar_scan_data.angle_increment = M_PI/NUM_READING;
+    lidar_scan_data.angle_increment = M_PI/(NUM_READING-1);
     lidar_scan_data.time_increment = (1/SCAN_FREQ) / NUM_READING;
     lidar_scan_data.range_min = 0.0;
     lidar_scan_data.range_max = 60.0;
-    lidar_scan_data.angle_min = ANGLE;
-    lidar_scan_data.angle_max = -ANGLE;
+    lidar_scan_data.angle_min = 0.0;
+    lidar_scan_data.angle_max = 0.0;
     lidar_scan_data.ranges.resize(NUM_READING);
     
 
@@ -123,8 +123,22 @@ int main(int argc, char** argv)
     lidar_set_freq(scan_freq);
     
     pwmWrite(PWM_PIN, 50);
+    delay(500);
+    bytes_wrote = lidar_serial.write(&START_MEASURE[0], size);
+    
+    for (int i = 0; i<=200; i++){
+        lidar_serial.flush();
+        result = lidar_serial.readline();
+        lidar_scan_data.ranges[i] = std::stof(result);
+    }
+    bytes_wrote = lidar_serial.write(&END_MEASURE[0], size);
+    lidar_serial.flush();
+    scan_time = ros::Time::now();
+    lidar_scan_data.header.stamp = scan_time;
+    chatter_pub.publish(lidar_scan_data);
 
-    delay(1000);
+    lidar_scan_data.angle_min = ANGLE;
+    lidar_scan_data.angle_max = -ANGLE;
     while (ros::ok()){
 
         clock_gettime(CLOCK_MONOTONIC_RAW, &begin);

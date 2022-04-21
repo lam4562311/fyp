@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(lidar_scan_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/ubuntu/fyp/devel/include " STREQUAL " ")
   set(lidar_scan_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/ubuntu/fyp/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(lidar_scan_EXPORTED_TARGETS "lidar_scan_generate_messages_dart")
+set(lidar_scan_EXPORTED_TARGETS "lidar_scan_generate_messages_cpp;lidar_scan_generate_messages_dart;lidar_scan_generate_messages_eus;lidar_scan_generate_messages_lisp;lidar_scan_generate_messages_nodejs;lidar_scan_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${lidar_scan_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${lidar_scan_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "roscpp;rospy;sensor_msgs;serial;std_msgs")
+set(depends "roscpp;rospy;sensor_msgs;serial;std_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

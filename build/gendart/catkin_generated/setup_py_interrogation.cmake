@@ -1,0 +1,7 @@
+set(gendart_SETUP_PY_SETUP_MODULE "setuptools")
+set(gendart_SETUP_PY_VERSION "2.0.1")
+set(gendart_SETUP_PY_SCRIPTS "")
+set(gendart_SETUP_PY_PACKAGES "gendart")
+set(gendart_SETUP_PY_PACKAGE_DIRS "src/gendart")
+set(gendart_SETUP_PY_MODULES "")
+set(gendart_SETUP_PY_MODULE_DIRS "")

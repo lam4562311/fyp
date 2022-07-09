@@ -1,0 +1,18 @@
+# Auto-generated. Do not edit!
+
+# Updated: Wed Jun 29 21:44:24 2022
+
+
+name: ps4-bot
+description: A ros ps4-bot message package for dartros
+version: 0.0.3
+publish_to: "none"
+
+environment:
+  sdk: ">=2.7.0 < 3.0.0"
+
+dependencies:
+  buffer: ^1.0.6
+  dartros: ^0.0.4+3
+  geographic_msgs:
+    path: ../geographic_msgs

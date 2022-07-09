@@ -1,0 +1,16 @@
+# Auto-generated. Do not edit!
+
+# Updated: Wed Jun 29 21:33:46 2022
+
+
+name: uuid_msgs
+description: A ros uuid_msgs message package for dartros
+version: 0.0.3
+publish_to: "none"
+
+environment:
+  sdk: ">=2.7.0 < 3.0.0"
+
+dependencies:
+  buffer: ^1.0.6
+  dartros: ^0.0.4+3

@@ -2,4 +2,4 @@
 source_root_dir = '/home/ubuntu/fyp/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/ubuntu/car_base-master/devel;/opt/ros/noetic'.split(';') if '/home/ubuntu/car_base-master/devel;/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/ubuntu/fyp/devel;/home/ubuntu/car_base-master/devel;/opt/ros/noetic'.split(';') if '/home/ubuntu/fyp/devel;/home/ubuntu/car_base-master/devel;/opt/ros/noetic' != '' else []

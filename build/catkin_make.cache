@@ -1,2 +1,2 @@
-ps4-bot
+gendart:ps4_bot
 -DCATKIN_DEVEL_PREFIX=/home/ubuntu/fyp/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/fyp/install -G Unix Makefiles

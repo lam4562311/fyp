@@ -63,15 +63,13 @@ class Matrix(object):
         self.height = height
         self.passable_left_right_border = False
         self.passable_up_down_border = False
-        self.height = len(map)
-        self.width  = len(map[0])
+        if map is None:
+            self.height = 0
+            self.width  = 0
+        else:            
+            self.height = len(map)
+            self.width  = len(map[0])
         self.nodes = build_nodes(self.width, self.height, map)
-
-    def set_passable_left_right_border(self):
-        self.passable_left_right_border = True
-
-    def set_passable_up_down_border(self):
-        self.passable_up_down_border = True
 
     def node(self, x, y):
         return self.nodes[y][x]
@@ -90,32 +88,16 @@ class Matrix(object):
         neighbors = []
         
         # up
-        if y == 0 and self.passable_up_down_border:
-            if self.walkable(x, self.height - 1):
-                neighbors.append(self.nodes[self.height - 1][x])
-        else:
-            if self.walkable(x, y - 1):
+        if self.walkable(x, y - 1):
                 neighbors.append(self.nodes[y - 1][x])
         # right
-        if x == self.width - 1 and self.passable_left_right_border:
-            if self.walkable(0, y):
-                neighbors.append(self.nodes[y][0])
-        else:
-            if self.walkable(x + 1, y):
+        if self.walkable(x + 1, y):
                 neighbors.append(self.nodes[y][x + 1])
         # down
-        if y == self.height - 1 and self.passable_up_down_border:
-            if self.walkable(x, 0):
-                neighbors.append(self.nodes[0][x])
-        else:
-            if self.walkable(x, y + 1):
+        if self.walkable(x, y + 1):
                 neighbors.append(self.nodes[y + 1][x])
         # left
-        if x == 0 and self.passable_left_right_border:
-            if self.walkable(self.width - 1, y):
-                neighbors.append(self.nodes[y][self.width - 1])
-        else:
-            if self.walkable(x - 1, y):
+        if self.walkable(x - 1, y):
                 neighbors.append(self.nodes[y][x - 1])
                 
         if diagonal_movement == DiagonalMovement.never:
@@ -123,15 +105,12 @@ class Matrix(object):
         # ul
         if self.walkable(x - 1, y - 1):
             neighbors.append(self.nodes[y - 1][x - 1])
-
         # ur
         if self.walkable(x + 1, y - 1):
             neighbors.append(self.nodes[y - 1][x + 1])
-
         # dr
         if self.walkable(x + 1, y + 1):
             neighbors.append(self.nodes[y + 1][x + 1])
-
         # dl
         if self.walkable(x - 1, y + 1):
             neighbors.append(self.nodes[y + 1][x - 1])

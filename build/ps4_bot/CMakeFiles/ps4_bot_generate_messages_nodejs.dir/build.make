@@ -55,6 +55,8 @@ include ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/progress.make
 
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg/Navigation.js
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg/vertices.js
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/AddtwoInts.js
 
 
 /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg/Navigation.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -71,9 +73,24 @@ ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/shar
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from ps4_bot/vertices.msg"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg
 
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from ps4_bot/navigation.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv
+
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/AddtwoInts.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/AddtwoInts.js: /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from ps4_bot/AddtwoInts.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv
+
 ps4_bot_generate_messages_nodejs: ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs
 ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg/Navigation.js
 ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/msg/vertices.js
+ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/navigation.js
+ps4_bot_generate_messages_nodejs: /home/ubuntu/fyp/devel/share/gennodejs/ros/ps4_bot/srv/AddtwoInts.js
 ps4_bot_generate_messages_nodejs: ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/build.make
 
 .PHONY : ps4_bot_generate_messages_nodejs

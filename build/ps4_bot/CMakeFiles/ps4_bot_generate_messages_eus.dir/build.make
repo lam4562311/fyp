@@ -55,6 +55,8 @@ include ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/progress.make
 
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/msg/Navigation.l
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/msg/vertices.l
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/AddtwoInts.l
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/manifest.l
 
 
@@ -72,13 +74,28 @@ ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from ps4_bot/vertices.msg"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/msg
 
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from ps4_bot/navigation.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv
+
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/AddtwoInts.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/AddtwoInts.l: /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from ps4_bot/AddtwoInts.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv
+
 /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for ps4_bot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for ps4_bot"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot ps4_bot geographic_msgs geometry_msgs std_msgs
 
 ps4_bot_generate_messages_eus: ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus
 ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/msg/Navigation.l
 ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/msg/vertices.l
+ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/navigation.l
+ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/srv/AddtwoInts.l
 ps4_bot_generate_messages_eus: /home/ubuntu/fyp/devel/share/roseus/ros/ps4_bot/manifest.l
 ps4_bot_generate_messages_eus: ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/build.make
 

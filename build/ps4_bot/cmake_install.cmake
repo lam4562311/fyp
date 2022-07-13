@@ -49,6 +49,13 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot/srv" TYPE FILE FILES
+    "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+    "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot/cmake" TYPE FILE FILES "/home/ubuntu/fyp/build/ps4_bot/catkin_generated/installspace/ps4_bot-msg-paths.cmake")
 endif()
 

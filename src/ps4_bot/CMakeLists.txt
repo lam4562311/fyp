@@ -10,10 +10,10 @@ project(ps4_bot)
 find_package(catkin REQUIRED COMPONENTS
   geographic_msgs
   geometry_msgs
+  std_msgs
   roscpp
   rospy
   message_generation
-  std_msgs
 )
 
 # System dependencies are found with CMake's conventions
@@ -56,12 +56,12 @@ find_package(catkin REQUIRED COMPONENTS
    vertices.msg
  )
 
-## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+# Generate services in the 'srv' folder
+ add_service_files(
+   FILES
+   navigation.srv
+   AddtwoInts.srv
+ )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -110,7 +110,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ps4_bot
-  CATKIN_DEPENDS geographic_msgs geometry_msgs roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS geographic_msgs geometry_msgs std_msgs roscpp rospy message_runtime
 #  DEPENDS system_lib
 )
 

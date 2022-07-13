@@ -2,6 +2,9 @@ file(REMOVE_RECURSE
   "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py"
   "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py"
   "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_vertices.py"
+  "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py"
+  "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py"
+  "/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py"
   "CMakeFiles/ps4_bot_generate_messages_py"
 )
 

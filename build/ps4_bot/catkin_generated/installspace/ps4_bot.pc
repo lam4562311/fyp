@@ -5,4 +5,4 @@ Description: Description of ps4_bot
 Version: 0.0.0
 Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: geographic_msgs geometry_msgs roscpp rospy std_msgs message_runtime
+Requires: geographic_msgs geometry_msgs std_msgs roscpp rospy message_runtime

@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
-services_str = ""
+services_str = "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv;/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
 pkg_name = "ps4_bot"
 dependencies_str = "geographic_msgs;geometry_msgs;std_msgs"
 langs = "gencpp;gendart;geneus;genlisp;gennodejs;genpy"

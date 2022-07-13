@@ -55,7 +55,10 @@ include ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/progress.make
 
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_vertices.py
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py
 
 
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
@@ -72,16 +75,42 @@ ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/pyth
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG ps4_bot/vertices"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg
 
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python code from SRV ps4_bot/navigation"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv
+
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py: /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python code from SRV ps4_bot/AddtwoInts"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv
+
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_vertices.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for ps4_bot"
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for ps4_bot"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg --initpy
+
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_vertices.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python srv __init__.py for ps4_bot"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv --initpy
 
 ps4_bot_generate_messages_py: ps4_bot/CMakeFiles/ps4_bot_generate_messages_py
 ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_Navigation.py
 ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/_vertices.py
+ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py
+ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_AddtwoInts.py
 ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/msg/__init__.py
+ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/__init__.py
 ps4_bot_generate_messages_py: ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build.make
 
 .PHONY : ps4_bot_generate_messages_py

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "ps4_bot: 2 messages, 0 services")
+message(STATUS "ps4_bot: 2 messages, 2 services")
 
 set(MSG_I_FLAGS "-Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg;-Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg")
 
@@ -28,6 +28,16 @@ add_custom_target(_ps4_bot_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ps4_bot" "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" "geographic_msgs/GeoPoint"
 )
 
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_custom_target(_ps4_bot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ps4_bot" "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" "geographic_msgs/BoundingBox:geographic_msgs/GeoPoint:ps4_bot/vertices"
+)
+
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
+add_custom_target(_ps4_bot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ps4_bot" "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" ""
+)
+
 #
 #  langs = gencpp;gendart;geneus;genlisp;gennodejs;genpy
 #
@@ -48,6 +58,18 @@ _generate_msg_cpp(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_cpp(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_cpp(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_cpp(ps4_bot
@@ -64,6 +86,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_cpp)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_cpp _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_cpp _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_cpp _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_cpp _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -89,6 +115,18 @@ _generate_msg_dart(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_dart(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gendart_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_dart(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gendart_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_dart(ps4_bot
@@ -105,6 +143,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_dart)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_dart _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_dart _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_dart _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_dart _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,6 +172,18 @@ _generate_msg_eus(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_eus(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_eus(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_eus(ps4_bot
@@ -146,6 +200,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_eus)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_eus _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_eus _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_eus _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_eus _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -171,6 +229,18 @@ _generate_msg_lisp(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_lisp(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_lisp(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_lisp(ps4_bot
@@ -187,6 +257,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_lisp)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_lisp _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_lisp _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_lisp _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_lisp _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -212,6 +286,18 @@ _generate_msg_nodejs(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_nodejs(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_nodejs(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_nodejs(ps4_bot
@@ -228,6 +314,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_nodejs)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_nodejs _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_nodejs _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_nodejs _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_nodejs _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -253,6 +343,18 @@ _generate_msg_py(ps4_bot
 )
 
 ### Generating Services
+_generate_srv_py(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geographic_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ps4_bot
+)
+_generate_srv_py(ps4_bot
+  "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ps4_bot
+)
 
 ### Generating Module File
 _generate_module_py(ps4_bot
@@ -269,6 +371,10 @@ add_dependencies(ps4_bot_generate_messages ps4_bot_generate_messages_py)
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_py _ps4_bot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_py _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv" NAME_WE)
+add_dependencies(ps4_bot_generate_messages_py _ps4_bot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv" NAME_WE)
 add_dependencies(ps4_bot_generate_messages_py _ps4_bot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

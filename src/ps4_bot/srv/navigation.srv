@@ -1,0 +1,22 @@
+#Recording the start and goal of the navigation
+
+#lat lng of start position
+geographic_msgs/GeoPoint start
+
+#lat lng of goal position
+geographic_msgs/GeoPoint goal
+
+#boundary of control zone
+#min SW
+#max NE
+geographic_msgs/BoundingBox boundary
+geographic_msgs/GeoPoint center
+
+#list of vertices
+ps4_bot/vertices[] polygons
+
+bool navigation_status
+
+---
+
+ps4_bot/vertices polylines

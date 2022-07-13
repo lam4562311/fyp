@@ -55,6 +55,8 @@ include ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/progress.make
 
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/Navigation.h
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/vertices.h
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/navigation.h
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h
 
 
 /home/ubuntu/fyp/devel/include/ps4_bot/Navigation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -73,9 +75,28 @@ ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from ps4_bot/vertices.msg"
 	cd /home/ubuntu/fyp/src/ps4_bot && /home/ubuntu/fyp/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/include/ps4_bot -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/ubuntu/fyp/devel/include/ps4_bot/navigation.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from ps4_bot/navigation.srv"
+	cd /home/ubuntu/fyp/src/ps4_bot && /home/ubuntu/fyp/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/include/ps4_bot -e /opt/ros/noetic/share/gencpp/cmake/..
+
+/home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h: /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv
+/home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from ps4_bot/AddtwoInts.srv"
+	cd /home/ubuntu/fyp/src/ps4_bot && /home/ubuntu/fyp/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/include/ps4_bot -e /opt/ros/noetic/share/gencpp/cmake/..
+
 ps4_bot_generate_messages_cpp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp
 ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/Navigation.h
 ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/vertices.h
+ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/navigation.h
+ps4_bot_generate_messages_cpp: /home/ubuntu/fyp/devel/include/ps4_bot/AddtwoInts.h
 ps4_bot_generate_messages_cpp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/build.make
 
 .PHONY : ps4_bot_generate_messages_cpp

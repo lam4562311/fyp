@@ -10,6 +10,7 @@ project(ps4_bot)
 find_package(catkin REQUIRED COMPONENTS
   geographic_msgs
   geometry_msgs
+  sensor_msgs
   std_msgs
   roscpp
   rospy
@@ -52,6 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
 # Generate messages in the 'msg' folder
  add_message_files(
    FILES
+   gps_compass.msg
    Navigation.msg
    vertices.msg
  )
@@ -59,8 +61,9 @@ find_package(catkin REQUIRED COMPONENTS
 # Generate services in the 'srv' folder
  add_service_files(
    FILES
+   GpsCompass.srv
    navigation.srv
-   AddtwoInts.srv
+   processing_nav.srv
  )
 
 ## Generate actions in the 'action' folder
@@ -75,6 +78,7 @@ find_package(catkin REQUIRED COMPONENTS
    DEPENDENCIES
    geographic_msgs
    geometry_msgs
+   sensor_msgs
    std_msgs
  )
 
@@ -110,7 +114,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ps4_bot
-  CATKIN_DEPENDS geographic_msgs geometry_msgs std_msgs roscpp rospy message_runtime
+  CATKIN_DEPENDS geographic_msgs geometry_msgs sensor_msgs std_msgs roscpp rospy message_runtime
 #  DEPENDS system_lib
 )
 
@@ -191,12 +195,12 @@ add_subdirectory(module)
 #   PATTERN ".svn" EXCLUDE
 # )
 
-## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+# Mark other files for installation (e.g. launch and bag files, etc.)
+ install(FILES
+   start.launch
+   # myfile2
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+ )
 
 #############
 ## Testing ##

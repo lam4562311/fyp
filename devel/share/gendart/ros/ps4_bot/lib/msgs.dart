@@ -1,7 +1,8 @@
 // Auto-generated. Do not edit!
 
-// Updated: Thu Jul  7 03:07:16 2022
+// Updated: Sun Jul 17 20:32:55 2022
 
 
+export 'src/msgs/gps_compass.dart';
 export 'src/msgs/Navigation.dart';
 export 'src/msgs/vertices.dart';

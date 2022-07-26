@@ -16,10 +16,6 @@
 #include <ros/message_operations.h>
 
 #include <geographic_msgs/GeoPoint.h>
-#include <geographic_msgs/GeoPoint.h>
-#include <geographic_msgs/BoundingBox.h>
-#include <geographic_msgs/GeoPoint.h>
-#include <ps4_bot/vertices.h>
 
 namespace ps4_bot
 {
@@ -29,42 +25,47 @@ struct Navigation_
   typedef Navigation_<ContainerAllocator> Type;
 
   Navigation_()
-    : start()
-    , goal()
-    , boundary()
-    , center()
-    , polygons()
-    , navigation_status(false)  {
+    : center()
+    , half_of_size_x(0)
+    , half_of_size_y(0)
+    , width(0)
+    , height(0)
+    , matrix()
+    , path()  {
     }
   Navigation_(const ContainerAllocator& _alloc)
-    : start(_alloc)
-    , goal(_alloc)
-    , boundary(_alloc)
-    , center(_alloc)
-    , polygons(_alloc)
-    , navigation_status(false)  {
+    : center(_alloc)
+    , half_of_size_x(0)
+    , half_of_size_y(0)
+    , width(0)
+    , height(0)
+    , matrix(_alloc)
+    , path(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef  ::geographic_msgs::GeoPoint_<ContainerAllocator>  _start_type;
-  _start_type start;
-
-   typedef  ::geographic_msgs::GeoPoint_<ContainerAllocator>  _goal_type;
-  _goal_type goal;
-
-   typedef  ::geographic_msgs::BoundingBox_<ContainerAllocator>  _boundary_type;
-  _boundary_type boundary;
-
    typedef  ::geographic_msgs::GeoPoint_<ContainerAllocator>  _center_type;
   _center_type center;
 
-   typedef std::vector< ::ps4_bot::vertices_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::ps4_bot::vertices_<ContainerAllocator> >::other >  _polygons_type;
-  _polygons_type polygons;
+   typedef int64_t _half_of_size_x_type;
+  _half_of_size_x_type half_of_size_x;
 
-   typedef uint8_t _navigation_status_type;
-  _navigation_status_type navigation_status;
+   typedef int64_t _half_of_size_y_type;
+  _half_of_size_y_type half_of_size_y;
+
+   typedef int64_t _width_type;
+  _width_type width;
+
+   typedef int64_t _height_type;
+  _height_type height;
+
+   typedef std::vector<uint8_t, typename ContainerAllocator::template rebind<uint8_t>::other >  _matrix_type;
+  _matrix_type matrix;
+
+   typedef std::vector<int64_t, typename ContainerAllocator::template rebind<int64_t>::other >  _path_type;
+  _path_type path;
 
 
 
@@ -95,12 +96,13 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::ps4_bot::Navigation_<ContainerAllocator1> & lhs, const ::ps4_bot::Navigation_<ContainerAllocator2> & rhs)
 {
-  return lhs.start == rhs.start &&
-    lhs.goal == rhs.goal &&
-    lhs.boundary == rhs.boundary &&
-    lhs.center == rhs.center &&
-    lhs.polygons == rhs.polygons &&
-    lhs.navigation_status == rhs.navigation_status;
+  return lhs.center == rhs.center &&
+    lhs.half_of_size_x == rhs.half_of_size_x &&
+    lhs.half_of_size_y == rhs.half_of_size_y &&
+    lhs.width == rhs.width &&
+    lhs.height == rhs.height &&
+    lhs.matrix == rhs.matrix &&
+    lhs.path == rhs.path;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -157,12 +159,12 @@ struct MD5Sum< ::ps4_bot::Navigation_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "135fcffa3e2b8bd004214e3d13184e74";
+    return "7307218b869e7c7e3251c645c123d534";
   }
 
   static const char* value(const ::ps4_bot::Navigation_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x135fcffa3e2b8bd0ULL;
-  static const uint64_t static_value2 = 0x04214e3d13184e74ULL;
+  static const uint64_t static_value1 = 0x7307218b869e7c7eULL;
+  static const uint64_t static_value2 = 0x3251c645c123d534ULL;
 };
 
 template<class ContainerAllocator>
@@ -181,25 +183,23 @@ struct Definition< ::ps4_bot::Navigation_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#Recording the start and goal of the navigation\n"
+    return "#self.center, self.half_of_size_x, self.half_of_size_y, self.matrix, self.path,\n"
+"#Recording the start and goal of the navigation\n"
 "\n"
-"#lat lng of start position\n"
-"geographic_msgs/GeoPoint start\n"
-"\n"
-"#lat lng of goal position\n"
-"geographic_msgs/GeoPoint goal\n"
-"\n"
-"#boundary of control zone\n"
-"#min SW\n"
-"#max NE\n"
-"geographic_msgs/BoundingBox boundary\n"
+"#lat lng of center position\n"
 "geographic_msgs/GeoPoint center\n"
 "\n"
-"#list of vertices\n"
-"ps4_bot/vertices[] polygons\n"
+"#map pixels\n"
+"int64 half_of_size_x\n"
+"int64 half_of_size_y\n"
 "\n"
-"bool navigation_status\n"
+"#map\n"
+"int64 width\n"
+"int64 height\n"
+"uint8[] matrix\n"
 "\n"
+"#path\n"
+"int64[] path\n"
 "================================================================================\n"
 "MSG: geographic_msgs/GeoPoint\n"
 "# Geographic point, using the WGS 84 reference ellipsoid.\n"
@@ -215,27 +215,6 @@ struct Definition< ::ps4_bot::Navigation_<ContainerAllocator> >
 "\n"
 "# Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).\n"
 "float64 altitude\n"
-"\n"
-"================================================================================\n"
-"MSG: geographic_msgs/BoundingBox\n"
-"# Geographic map bounding box. \n"
-"#\n"
-"# The two GeoPoints denote diagonally opposite corners of the box.\n"
-"#\n"
-"# If min_pt.latitude is NaN, the bounding box is \"global\", matching\n"
-"# any valid latitude, longitude and altitude.\n"
-"#\n"
-"# If min_pt.altitude is NaN, the bounding box is two-dimensional and\n"
-"# matches any altitude within the specified latitude and longitude\n"
-"# range.\n"
-"\n"
-"GeoPoint min_pt         # lowest and most Southwestern corner\n"
-"GeoPoint max_pt         # highest and most Northeastern corner\n"
-"\n"
-"================================================================================\n"
-"MSG: ps4_bot/vertices\n"
-"#list of GeoPoint\n"
-"geographic_msgs/GeoPoint[] vertices\n"
 ;
   }
 
@@ -254,12 +233,13 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.start);
-      stream.next(m.goal);
-      stream.next(m.boundary);
       stream.next(m.center);
-      stream.next(m.polygons);
-      stream.next(m.navigation_status);
+      stream.next(m.half_of_size_x);
+      stream.next(m.half_of_size_y);
+      stream.next(m.width);
+      stream.next(m.height);
+      stream.next(m.matrix);
+      stream.next(m.path);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -278,28 +258,29 @@ struct Printer< ::ps4_bot::Navigation_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::ps4_bot::Navigation_<ContainerAllocator>& v)
   {
-    s << indent << "start: ";
-    s << std::endl;
-    Printer< ::geographic_msgs::GeoPoint_<ContainerAllocator> >::stream(s, indent + "  ", v.start);
-    s << indent << "goal: ";
-    s << std::endl;
-    Printer< ::geographic_msgs::GeoPoint_<ContainerAllocator> >::stream(s, indent + "  ", v.goal);
-    s << indent << "boundary: ";
-    s << std::endl;
-    Printer< ::geographic_msgs::BoundingBox_<ContainerAllocator> >::stream(s, indent + "  ", v.boundary);
     s << indent << "center: ";
     s << std::endl;
     Printer< ::geographic_msgs::GeoPoint_<ContainerAllocator> >::stream(s, indent + "  ", v.center);
-    s << indent << "polygons[]" << std::endl;
-    for (size_t i = 0; i < v.polygons.size(); ++i)
+    s << indent << "half_of_size_x: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.half_of_size_x);
+    s << indent << "half_of_size_y: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.half_of_size_y);
+    s << indent << "width: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.width);
+    s << indent << "height: ";
+    Printer<int64_t>::stream(s, indent + "  ", v.height);
+    s << indent << "matrix[]" << std::endl;
+    for (size_t i = 0; i < v.matrix.size(); ++i)
     {
-      s << indent << "  polygons[" << i << "]: ";
-      s << std::endl;
-      s << indent;
-      Printer< ::ps4_bot::vertices_<ContainerAllocator> >::stream(s, indent + "    ", v.polygons[i]);
+      s << indent << "  matrix[" << i << "]: ";
+      Printer<uint8_t>::stream(s, indent + "  ", v.matrix[i]);
     }
-    s << indent << "navigation_status: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.navigation_status);
+    s << indent << "path[]" << std::endl;
+    for (size_t i = 0; i < v.path.size(); ++i)
+    {
+      s << indent << "  path[" << i << "]: ";
+      Printer<int64_t>::stream(s, indent + "  ", v.path[i]);
+    }
   }
 };
 

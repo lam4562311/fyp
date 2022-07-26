@@ -3,6 +3,8 @@
   (:export
    "<NAVIGATION>"
    "NAVIGATION"
+   "<GPS_COMPASS>"
+   "GPS_COMPASS"
    "<VERTICES>"
    "VERTICES"
   ))

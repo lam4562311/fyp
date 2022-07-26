@@ -1,14 +1,16 @@
 (cl:in-package ps4_bot-msg)
-(cl:export '(START-VAL
-          START
-          GOAL-VAL
-          GOAL
-          BOUNDARY-VAL
-          BOUNDARY
-          CENTER-VAL
+(cl:export '(CENTER-VAL
           CENTER
-          POLYGONS-VAL
-          POLYGONS
-          NAVIGATION_STATUS-VAL
-          NAVIGATION_STATUS
+          HALF_OF_SIZE_X-VAL
+          HALF_OF_SIZE_X
+          HALF_OF_SIZE_Y-VAL
+          HALF_OF_SIZE_Y
+          WIDTH-VAL
+          WIDTH
+          HEIGHT-VAL
+          HEIGHT
+          MATRIX-VAL
+          MATRIX
+          PATH-VAL
+          PATH
 ))

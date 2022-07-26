@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/fyp/devel
+
+Name: lidar_scan
+Description: Description of lidar_scan
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy sensor_msgs serial std_msgs

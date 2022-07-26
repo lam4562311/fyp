@@ -53,44 +53,61 @@ CMAKE_BINARY_DIR = /home/ubuntu/fyp/build
 # Include the progress variables for this target.
 include ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/progress.make
 
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/gps_compass.lisp
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/vertices.lisp
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/AddtwoInts.lisp
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp
 
+
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/gps_compass.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/gps_compass.lisp: /home/ubuntu/fyp/src/ps4_bot/msg/gps_compass.msg
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/gps_compass.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from ps4_bot/gps_compass.msg"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/msg/gps_compass.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg
 
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp: /home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg
-/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
-/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from ps4_bot/Navigation.msg"
-	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from ps4_bot/Navigation.msg"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg
 
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/vertices.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/vertices.lisp: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/vertices.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from ps4_bot/vertices.msg"
-	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from ps4_bot/vertices.msg"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg
+
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp: /home/ubuntu/fyp/src/ps4_bot/srv/GpsCompass.srv
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp: /opt/ros/noetic/share/std_msgs/msg/Empty.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from ps4_bot/GpsCompass.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/srv/GpsCompass.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv
 
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
-/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
 /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from ps4_bot/navigation.srv"
-	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from ps4_bot/navigation.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv
 
-/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/AddtwoInts.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/AddtwoInts.lisp: /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from ps4_bot/AddtwoInts.srv"
-	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp: /home/ubuntu/fyp/src/ps4_bot/srv/processing_nav.srv
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp: /opt/ros/noetic/share/std_msgs/msg/Empty.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from ps4_bot/processing_nav.srv"
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ubuntu/fyp/src/ps4_bot/srv/processing_nav.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv
 
 ps4_bot_generate_messages_lisp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp
+ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/gps_compass.lisp
 ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/Navigation.lisp
 ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/msg/vertices.lisp
+ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/GpsCompass.lisp
 ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/navigation.lisp
-ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/AddtwoInts.lisp
+ps4_bot_generate_messages_lisp: /home/ubuntu/fyp/devel/share/common-lisp/ros/ps4_bot/srv/processing_nav.lisp
 ps4_bot_generate_messages_lisp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/build.make
 
 .PHONY : ps4_bot_generate_messages_lisp

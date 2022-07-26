@@ -1,18 +1,17 @@
+#self.center, self.half_of_size_x, self.half_of_size_y, self.matrix, self.path,
 #Recording the start and goal of the navigation
 
-#lat lng of start position
-geographic_msgs/GeoPoint start
-
-#lat lng of goal position
-geographic_msgs/GeoPoint goal
-
-#boundary of control zone
-#min SW
-#max NE
-geographic_msgs/BoundingBox boundary
+#lat lng of center position
 geographic_msgs/GeoPoint center
 
-#list of vertices
-ps4_bot/vertices[] polygons
+#map pixels
+int64 half_of_size_x
+int64 half_of_size_y
 
-bool navigation_status
+#map
+int64 width
+int64 height
+uint8[] matrix
+
+#path
+int64[] path

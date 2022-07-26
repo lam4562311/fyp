@@ -1,10 +1,12 @@
 
 "use strict";
 
-let AddtwoInts = require('./AddtwoInts.js')
+let processing_nav = require('./processing_nav.js')
+let GpsCompass = require('./GpsCompass.js')
 let navigation = require('./navigation.js')
 
 module.exports = {
-  AddtwoInts: AddtwoInts,
+  processing_nav: processing_nav,
+  GpsCompass: GpsCompass,
   navigation: navigation,
 };

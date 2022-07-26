@@ -45,7 +45,7 @@ def callback(data):
         LED_control = bt.data[7]
         if LED_control == 1:
             r1.data = not r1.data
-        print("LED: ", r1.data)
+        rospy.loginfo("LED: {}".format(r1.data))
         pubr1.publish(r1)
     # elif bt.data[7] == 1:
     #     speeding_fac=0.8
@@ -65,9 +65,9 @@ def callback(data):
     ax.data.append(data.axes[7])			# KU0
     
     if (not(twist.linear.x == ax1 and twist.linear.y == ax2) and auto_speed== False):
-        twist.linear.x = ax1
+        twist.linear.x = -ax1
         twist.linear.y = ax2
-        print("x: ", twist.linear.x, ", y: ", twist.linear.y)
+        rospy.loginfo("x: {}, y: {}".format(twist.linear.x, twist.linear.y))
         pubtw.publish(twist)
     twist.angular.z = ax3
     
@@ -75,7 +75,7 @@ def callback(data):
     pubbt.publish(bt)
 # Intializes everything
 def start():
-    print("Hi, It is from Joy2mbed.py")
+    rospy.loginfo("Hi, It is from Joy2mbed.py")
     # publishing to "moving_base" and "fcn_button" to control mbed
     global pubax
     global pubbt
@@ -96,5 +96,3 @@ if __name__ == '__main__':
         start()
     except rospy.ROSInterruptException:
         pass
-
-# hihihi

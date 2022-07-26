@@ -68,6 +68,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -78,16 +89,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -112,16 +113,15 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : rebuild_cache/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -168,81 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
-
-# Convenience name for target.
-ps4_bot_genlisp: ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
-
-.PHONY : ps4_bot_genlisp
-
-# fast build rule for target.
-ps4_bot_genlisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/build
-.PHONY : ps4_bot_genlisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
-
-# Convenience name for target.
-ps4_bot_gennodejs: ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
-
-.PHONY : ps4_bot_gennodejs
-
-# fast build rule for target.
-ps4_bot_gennodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/build
-.PHONY : ps4_bot_gennodejs/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-ps4_bot_generate_messages_lisp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
-
-.PHONY : ps4_bot_generate_messages_lisp
-
-# fast build rule for target.
-ps4_bot_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/build
-.PHONY : ps4_bot_generate_messages_lisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
-
-# Convenience name for target.
-ps4_bot_geneus: ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
-
-.PHONY : ps4_bot_geneus
-
-# fast build rule for target.
-ps4_bot_geneus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_geneus.dir/build.make ps4_bot/CMakeFiles/ps4_bot_geneus.dir/build
-.PHONY : ps4_bot_geneus/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
-.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
-
-# Convenience name for target.
-_ps4_bot_generate_messages_check_deps_vertices: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
-
-.PHONY : _ps4_bot_generate_messages_check_deps_vertices
-
-# fast build rule for target.
-_ps4_bot_generate_messages_check_deps_vertices/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/build
-.PHONY : _ps4_bot_generate_messages_check_deps_vertices/fast
-
-# Convenience name for target.
 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule
 .PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule
@@ -258,304 +183,64 @@ _ps4_bot_generate_messages_check_deps_Navigation/fast:
 .PHONY : _ps4_bot_generate_messages_check_deps_Navigation/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
+.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+uuid_msgs_generate_messages_py: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : uuid_msgs_generate_messages_py
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+uuid_msgs_generate_messages_py/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
+.PHONY : uuid_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
+ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/rule
+.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/rule
 
 # Convenience name for target.
-ps4_bot_generate_messages_nodejs: ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
+_ps4_bot_generate_messages_check_deps_gps_compass: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/rule
 
-.PHONY : ps4_bot_generate_messages_nodejs
+.PHONY : _ps4_bot_generate_messages_check_deps_gps_compass
 
 # fast build rule for target.
-ps4_bot_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/build
-.PHONY : ps4_bot_generate_messages_nodejs/fast
+_ps4_bot_generate_messages_check_deps_gps_compass/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir/build
+.PHONY : _ps4_bot_generate_messages_check_deps_gps_compass/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
+.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+uuid_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : uuid_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+uuid_msgs_generate_messages_nodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
+.PHONY : uuid_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+uuid_msgs_generate_messages_eus: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : uuid_msgs_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
-
-# Convenience name for target.
-ps4_bot_generate_messages_py: ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
-
-.PHONY : ps4_bot_generate_messages_py
-
-# fast build rule for target.
-ps4_bot_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build
-.PHONY : ps4_bot_generate_messages_py/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
-
-# Convenience name for target.
-ps4_bot_gendart: ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
-
-.PHONY : ps4_bot_gendart
-
-# fast build rule for target.
-ps4_bot_gendart/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gendart.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gendart.dir/build
-.PHONY : ps4_bot_gendart/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
-
-# Convenience name for target.
-ps4_bot_generate_messages: ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
-
-.PHONY : ps4_bot_generate_messages
-
-# fast build rule for target.
-ps4_bot_generate_messages/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/build
-.PHONY : ps4_bot_generate_messages/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-ps4_bot_generate_messages_cpp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
-
-.PHONY : ps4_bot_generate_messages_cpp
-
-# fast build rule for target.
-ps4_bot_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/build
-.PHONY : ps4_bot_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
-
-# Convenience name for target.
-ps4_bot_gencpp: ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
-
-.PHONY : ps4_bot_gencpp
-
-# fast build rule for target.
-ps4_bot_gencpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/build
-.PHONY : ps4_bot_gencpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_lisp: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_lisp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
-.PHONY : uuid_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-ps4_bot_generate_messages_eus: ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
-
-.PHONY : ps4_bot_generate_messages_eus
-
-# fast build rule for target.
-ps4_bot_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/build
-.PHONY : ps4_bot_generate_messages_eus/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
-.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
-
-# Convenience name for target.
-_ps4_bot_generate_messages_check_deps_navigation: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
-
-.PHONY : _ps4_bot_generate_messages_check_deps_navigation
-
-# fast build rule for target.
-_ps4_bot_generate_messages_check_deps_navigation/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/build
-.PHONY : _ps4_bot_generate_messages_check_deps_navigation/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geographic_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
-.PHONY : geographic_msgs_generate_messages_nodejs/fast
+uuid_msgs_generate_messages_eus/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+.PHONY : uuid_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
@@ -588,6 +273,36 @@ geographic_msgs_generate_messages_eus/fast:
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_cpp: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_cpp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_cpp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
+.PHONY : uuid_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+ps4_bot_generate_messages_cpp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/rule
+
+.PHONY : ps4_bot_generate_messages_cpp
+
+# fast build rule for target.
+ps4_bot_generate_messages_cpp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_cpp.dir/build
+.PHONY : ps4_bot_generate_messages_cpp/fast
+
+# Convenience name for target.
 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
 .PHONY : ps4_bot/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
@@ -601,6 +316,51 @@ geographic_msgs_generate_messages_py: ps4_bot/CMakeFiles/geographic_msgs_generat
 geographic_msgs_generate_messages_py/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
 .PHONY : geographic_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+uuid_msgs_generate_messages_lisp: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : uuid_msgs_generate_messages_lisp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_lisp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
+.PHONY : uuid_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/rule
+.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/rule
+
+# Convenience name for target.
+_ps4_bot_generate_messages_check_deps_processing_nav: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/rule
+
+.PHONY : _ps4_bot_generate_messages_check_deps_processing_nav
+
+# fast build rule for target.
+_ps4_bot_generate_messages_check_deps_processing_nav/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_processing_nav.dir/build
+.PHONY : _ps4_bot_generate_messages_check_deps_processing_nav/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
+
+# Convenience name for target.
+ps4_bot_gencpp: ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/rule
+
+.PHONY : ps4_bot_gencpp
+
+# fast build rule for target.
+ps4_bot_gencpp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gencpp.dir/build
+.PHONY : ps4_bot_gencpp/fast
 
 # Convenience name for target.
 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
@@ -618,6 +378,111 @@ geographic_msgs_generate_messages_cpp/fast:
 .PHONY : geographic_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
+.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
+
+# Convenience name for target.
+_ps4_bot_generate_messages_check_deps_vertices: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/rule
+
+.PHONY : _ps4_bot_generate_messages_check_deps_vertices
+
+# fast build rule for target.
+_ps4_bot_generate_messages_check_deps_vertices/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_vertices.dir/build
+.PHONY : _ps4_bot_generate_messages_check_deps_vertices/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+ps4_bot_generate_messages_nodejs: ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/rule
+
+.PHONY : ps4_bot_generate_messages_nodejs
+
+# fast build rule for target.
+ps4_bot_generate_messages_nodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_nodejs.dir/build
+.PHONY : ps4_bot_generate_messages_nodejs/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/rule
+.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/rule
+
+# Convenience name for target.
+_ps4_bot_generate_messages_check_deps_GpsCompass: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/rule
+
+.PHONY : _ps4_bot_generate_messages_check_deps_GpsCompass
+
+# fast build rule for target.
+_ps4_bot_generate_messages_check_deps_GpsCompass/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_GpsCompass.dir/build
+.PHONY : _ps4_bot_generate_messages_check_deps_GpsCompass/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+.PHONY : ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geographic_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geographic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geographic_msgs_generate_messages_nodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
+.PHONY : geographic_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
+.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
+
+# Convenience name for target.
+_ps4_bot_generate_messages_check_deps_navigation: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/rule
+
+.PHONY : _ps4_bot_generate_messages_check_deps_navigation
+
+# fast build rule for target.
+_ps4_bot_generate_messages_check_deps_navigation/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/build
+.PHONY : _ps4_bot_generate_messages_check_deps_navigation/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
+
+# Convenience name for target.
+ps4_bot_gennodejs: ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/rule
+
+.PHONY : ps4_bot_gennodejs
+
+# fast build rule for target.
+ps4_bot_gennodejs/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gennodejs.dir/build
+.PHONY : ps4_bot_gennodejs/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+ps4_bot_generate_messages_lisp: ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/rule
+
+.PHONY : ps4_bot_generate_messages_lisp
+
+# fast build rule for target.
+ps4_bot_generate_messages_lisp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_lisp.dir/build
+.PHONY : ps4_bot_generate_messages_lisp/fast
+
+# Convenience name for target.
 ps4_bot/CMakeFiles/ps4_bot_generate_messages_dart.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_dart.dir/rule
 .PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_dart.dir/rule
@@ -633,199 +498,49 @@ ps4_bot_generate_messages_dart/fast:
 .PHONY : ps4_bot_generate_messages_dart/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+ps4_bot_generate_messages_eus: ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : ps4_bot_generate_messages_eus
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+ps4_bot_generate_messages_eus/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_eus.dir/build
+.PHONY : ps4_bot_generate_messages_eus/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+ps4_bot_geneus: ps4_bot/CMakeFiles/ps4_bot_geneus.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : ps4_bot_geneus
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+ps4_bot_geneus/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_geneus.dir/build.make ps4_bot/CMakeFiles/ps4_bot_geneus.dir/build
+.PHONY : ps4_bot_geneus/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+ps4_bot_genlisp: ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : ps4_bot_genlisp
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_cpp: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_cpp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_cpp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
-.PHONY : uuid_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_eus: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_nodejs: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-uuid_msgs_generate_messages_nodejs/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
-.PHONY : uuid_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_py: ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_py
-
-# fast build rule for target.
-uuid_msgs_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
-.PHONY : uuid_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/rule
-.PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/rule
-
-# Convenience name for target.
-_ps4_bot_generate_messages_check_deps_AddtwoInts: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/rule
-
-.PHONY : _ps4_bot_generate_messages_check_deps_AddtwoInts
-
-# fast build rule for target.
-_ps4_bot_generate_messages_check_deps_AddtwoInts/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/build.make ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_AddtwoInts.dir/build
-.PHONY : _ps4_bot_generate_messages_check_deps_AddtwoInts/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+ps4_bot_genlisp/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/build.make ps4_bot/CMakeFiles/ps4_bot_genlisp.dir/build
+.PHONY : ps4_bot_genlisp/fast
 
 # Convenience name for target.
 ps4_bot/CMakeFiles/ps4_bot_genpy.dir/rule:
@@ -843,34 +558,49 @@ ps4_bot_genpy/fast:
 .PHONY : ps4_bot_genpy/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+ps4_bot_generate_messages: ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : ps4_bot_generate_messages
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+ps4_bot_generate_messages/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages.dir/build
+.PHONY : ps4_bot_generate_messages/fast
 
 # Convenience name for target.
-ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+ps4_bot_gendart: ps4_bot/CMakeFiles/ps4_bot_gendart.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : ps4_bot_gendart
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make ps4_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+ps4_bot_gendart/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_gendart.dir/build.make ps4_bot/CMakeFiles/ps4_bot_gendart.dir/build
+.PHONY : ps4_bot_gendart/fast
+
+# Convenience name for target.
+ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
+.PHONY : ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
+
+# Convenience name for target.
+ps4_bot_generate_messages_py: ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/rule
+
+.PHONY : ps4_bot_generate_messages_py
+
+# fast build rule for target.
+ps4_bot_generate_messages_py/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build
+.PHONY : ps4_bot_generate_messages_py/fast
 
 # Help Target
 help:
@@ -879,59 +609,41 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... ps4_bot_genlisp"
-	@echo "... ps4_bot_gennodejs"
-	@echo "... ps4_bot_generate_messages_lisp"
-	@echo "... ps4_bot_geneus"
-	@echo "... list_install_components"
-	@echo "... _ps4_bot_generate_messages_check_deps_vertices"
 	@echo "... _ps4_bot_generate_messages_check_deps_Navigation"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... ps4_bot_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... ps4_bot_generate_messages_py"
-	@echo "... ps4_bot_gendart"
-	@echo "... ps4_bot_generate_messages"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... ps4_bot_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... ps4_bot_gencpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... uuid_msgs_generate_messages_lisp"
-	@echo "... ps4_bot_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... _ps4_bot_generate_messages_check_deps_navigation"
-	@echo "... geographic_msgs_generate_messages_nodejs"
+	@echo "... uuid_msgs_generate_messages_py"
+	@echo "... _ps4_bot_generate_messages_check_deps_gps_compass"
+	@echo "... uuid_msgs_generate_messages_nodejs"
+	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... geographic_msgs_generate_messages_lisp"
 	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... uuid_msgs_generate_messages_cpp"
+	@echo "... ps4_bot_generate_messages_cpp"
 	@echo "... geographic_msgs_generate_messages_py"
+	@echo "... test"
+	@echo "... uuid_msgs_generate_messages_lisp"
+	@echo "... _ps4_bot_generate_messages_check_deps_processing_nav"
+	@echo "... ps4_bot_gencpp"
 	@echo "... install/strip"
 	@echo "... geographic_msgs_generate_messages_cpp"
+	@echo "... list_install_components"
+	@echo "... _ps4_bot_generate_messages_check_deps_vertices"
+	@echo "... ps4_bot_generate_messages_nodejs"
+	@echo "... _ps4_bot_generate_messages_check_deps_GpsCompass"
+	@echo "... geographic_msgs_generate_messages_nodejs"
+	@echo "... _ps4_bot_generate_messages_check_deps_navigation"
+	@echo "... ps4_bot_gennodejs"
+	@echo "... ps4_bot_generate_messages_lisp"
 	@echo "... ps4_bot_generate_messages_dart"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... uuid_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... uuid_msgs_generate_messages_nodejs"
-	@echo "... uuid_msgs_generate_messages_py"
-	@echo "... rebuild_cache"
-	@echo "... _ps4_bot_generate_messages_check_deps_AddtwoInts"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
+	@echo "... ps4_bot_generate_messages_eus"
+	@echo "... ps4_bot_geneus"
+	@echo "... ps4_bot_genlisp"
 	@echo "... install/local"
 	@echo "... ps4_bot_genpy"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... ps4_bot_generate_messages"
+	@echo "... ps4_bot_gendart"
+	@echo "... ps4_bot_generate_messages_py"
 .PHONY : help
 
 

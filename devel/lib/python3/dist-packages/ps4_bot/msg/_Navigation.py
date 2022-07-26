@@ -7,31 +7,28 @@ import genpy
 import struct
 
 import geographic_msgs.msg
-import ps4_bot.msg
 
 class Navigation(genpy.Message):
-  _md5sum = "135fcffa3e2b8bd004214e3d13184e74"
+  _md5sum = "7307218b869e7c7e3251c645c123d534"
   _type = "ps4_bot/Navigation"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """#Recording the start and goal of the navigation
+  _full_text = """#self.center, self.half_of_size_x, self.half_of_size_y, self.matrix, self.path,
+#Recording the start and goal of the navigation
 
-#lat lng of start position
-geographic_msgs/GeoPoint start
-
-#lat lng of goal position
-geographic_msgs/GeoPoint goal
-
-#boundary of control zone
-#min SW
-#max NE
-geographic_msgs/BoundingBox boundary
+#lat lng of center position
 geographic_msgs/GeoPoint center
 
-#list of vertices
-ps4_bot/vertices[] polygons
+#map pixels
+int64 half_of_size_x
+int64 half_of_size_y
 
-bool navigation_status
+#map
+int64 width
+int64 height
+uint8[] matrix
 
+#path
+int64[] path
 ================================================================================
 MSG: geographic_msgs/GeoPoint
 # Geographic point, using the WGS 84 reference ellipsoid.
@@ -47,29 +44,9 @@ float64 longitude
 
 # Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).
 float64 altitude
-
-================================================================================
-MSG: geographic_msgs/BoundingBox
-# Geographic map bounding box. 
-#
-# The two GeoPoints denote diagonally opposite corners of the box.
-#
-# If min_pt.latitude is NaN, the bounding box is "global", matching
-# any valid latitude, longitude and altitude.
-#
-# If min_pt.altitude is NaN, the bounding box is two-dimensional and
-# matches any altitude within the specified latitude and longitude
-# range.
-
-GeoPoint min_pt         # lowest and most Southwestern corner
-GeoPoint max_pt         # highest and most Northeastern corner
-
-================================================================================
-MSG: ps4_bot/vertices
-#list of GeoPoint
-geographic_msgs/GeoPoint[] vertices"""
-  __slots__ = ['start','goal','boundary','center','polygons','navigation_status']
-  _slot_types = ['geographic_msgs/GeoPoint','geographic_msgs/GeoPoint','geographic_msgs/BoundingBox','geographic_msgs/GeoPoint','ps4_bot/vertices[]','bool']
+"""
+  __slots__ = ['center','half_of_size_x','half_of_size_y','width','height','matrix','path']
+  _slot_types = ['geographic_msgs/GeoPoint','int64','int64','int64','int64','uint8[]','int64[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -79,7 +56,7 @@ geographic_msgs/GeoPoint[] vertices"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       start,goal,boundary,center,polygons,navigation_status
+       center,half_of_size_x,half_of_size_y,width,height,matrix,path
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -88,25 +65,28 @@ geographic_msgs/GeoPoint[] vertices"""
     if args or kwds:
       super(Navigation, self).__init__(*args, **kwds)
       # message fields cannot be None, assign default values for those that are
-      if self.start is None:
-        self.start = geographic_msgs.msg.GeoPoint()
-      if self.goal is None:
-        self.goal = geographic_msgs.msg.GeoPoint()
-      if self.boundary is None:
-        self.boundary = geographic_msgs.msg.BoundingBox()
       if self.center is None:
         self.center = geographic_msgs.msg.GeoPoint()
-      if self.polygons is None:
-        self.polygons = []
-      if self.navigation_status is None:
-        self.navigation_status = False
+      if self.half_of_size_x is None:
+        self.half_of_size_x = 0
+      if self.half_of_size_y is None:
+        self.half_of_size_y = 0
+      if self.width is None:
+        self.width = 0
+      if self.height is None:
+        self.height = 0
+      if self.matrix is None:
+        self.matrix = b''
+      if self.path is None:
+        self.path = []
     else:
-      self.start = geographic_msgs.msg.GeoPoint()
-      self.goal = geographic_msgs.msg.GeoPoint()
-      self.boundary = geographic_msgs.msg.BoundingBox()
       self.center = geographic_msgs.msg.GeoPoint()
-      self.polygons = []
-      self.navigation_status = False
+      self.half_of_size_x = 0
+      self.half_of_size_y = 0
+      self.width = 0
+      self.height = 0
+      self.matrix = b''
+      self.path = []
 
   def _get_types(self):
     """
@@ -121,17 +101,18 @@ geographic_msgs/GeoPoint[] vertices"""
     """
     try:
       _x = self
-      buff.write(_get_struct_15d().pack(_x.start.latitude, _x.start.longitude, _x.start.altitude, _x.goal.latitude, _x.goal.longitude, _x.goal.altitude, _x.boundary.min_pt.latitude, _x.boundary.min_pt.longitude, _x.boundary.min_pt.altitude, _x.boundary.max_pt.latitude, _x.boundary.max_pt.longitude, _x.boundary.max_pt.altitude, _x.center.latitude, _x.center.longitude, _x.center.altitude))
-      length = len(self.polygons)
+      buff.write(_get_struct_3d4q().pack(_x.center.latitude, _x.center.longitude, _x.center.altitude, _x.half_of_size_x, _x.half_of_size_y, _x.width, _x.height))
+      _x = self.matrix
+      length = len(_x)
+      # - if encoded as a list instead, serialize as bytes instead of string
+      if type(_x) in [list, tuple]:
+        buff.write(struct.Struct('<I%sB'%length).pack(length, *_x))
+      else:
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      length = len(self.path)
       buff.write(_struct_I.pack(length))
-      for val1 in self.polygons:
-        length = len(val1.vertices)
-        buff.write(_struct_I.pack(length))
-        for val2 in val1.vertices:
-          _x = val2
-          buff.write(_get_struct_3d().pack(_x.latitude, _x.longitude, _x.altitude))
-      _x = self.navigation_status
-      buff.write(_get_struct_B().pack(_x))
+      pattern = '<%sq'%length
+      buff.write(struct.Struct(pattern).pack(*self.path))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -143,43 +124,27 @@ geographic_msgs/GeoPoint[] vertices"""
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.start is None:
-        self.start = geographic_msgs.msg.GeoPoint()
-      if self.goal is None:
-        self.goal = geographic_msgs.msg.GeoPoint()
-      if self.boundary is None:
-        self.boundary = geographic_msgs.msg.BoundingBox()
       if self.center is None:
         self.center = geographic_msgs.msg.GeoPoint()
-      if self.polygons is None:
-        self.polygons = None
       end = 0
       _x = self
       start = end
-      end += 120
-      (_x.start.latitude, _x.start.longitude, _x.start.altitude, _x.goal.latitude, _x.goal.longitude, _x.goal.altitude, _x.boundary.min_pt.latitude, _x.boundary.min_pt.longitude, _x.boundary.min_pt.altitude, _x.boundary.max_pt.latitude, _x.boundary.max_pt.longitude, _x.boundary.max_pt.altitude, _x.center.latitude, _x.center.longitude, _x.center.altitude,) = _get_struct_15d().unpack(str[start:end])
+      end += 56
+      (_x.center.latitude, _x.center.longitude, _x.center.altitude, _x.half_of_size_x, _x.half_of_size_y, _x.width, _x.height,) = _get_struct_3d4q().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      self.polygons = []
-      for i in range(0, length):
-        val1 = ps4_bot.msg.vertices()
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        val1.vertices = []
-        for i in range(0, length):
-          val2 = geographic_msgs.msg.GeoPoint()
-          _x = val2
-          start = end
-          end += 24
-          (_x.latitude, _x.longitude, _x.altitude,) = _get_struct_3d().unpack(str[start:end])
-          val1.vertices.append(val2)
-        self.polygons.append(val1)
       start = end
-      end += 1
-      (self.navigation_status,) = _get_struct_B().unpack(str[start:end])
-      self.navigation_status = bool(self.navigation_status)
+      end += length
+      self.matrix = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sq'%length
+      start = end
+      s = struct.Struct(pattern)
+      end += s.size
+      self.path = s.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -193,17 +158,18 @@ geographic_msgs/GeoPoint[] vertices"""
     """
     try:
       _x = self
-      buff.write(_get_struct_15d().pack(_x.start.latitude, _x.start.longitude, _x.start.altitude, _x.goal.latitude, _x.goal.longitude, _x.goal.altitude, _x.boundary.min_pt.latitude, _x.boundary.min_pt.longitude, _x.boundary.min_pt.altitude, _x.boundary.max_pt.latitude, _x.boundary.max_pt.longitude, _x.boundary.max_pt.altitude, _x.center.latitude, _x.center.longitude, _x.center.altitude))
-      length = len(self.polygons)
+      buff.write(_get_struct_3d4q().pack(_x.center.latitude, _x.center.longitude, _x.center.altitude, _x.half_of_size_x, _x.half_of_size_y, _x.width, _x.height))
+      _x = self.matrix
+      length = len(_x)
+      # - if encoded as a list instead, serialize as bytes instead of string
+      if type(_x) in [list, tuple]:
+        buff.write(struct.Struct('<I%sB'%length).pack(length, *_x))
+      else:
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      length = len(self.path)
       buff.write(_struct_I.pack(length))
-      for val1 in self.polygons:
-        length = len(val1.vertices)
-        buff.write(_struct_I.pack(length))
-        for val2 in val1.vertices:
-          _x = val2
-          buff.write(_get_struct_3d().pack(_x.latitude, _x.longitude, _x.altitude))
-      _x = self.navigation_status
-      buff.write(_get_struct_B().pack(_x))
+      pattern = '<%sq'%length
+      buff.write(self.path.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -216,43 +182,27 @@ geographic_msgs/GeoPoint[] vertices"""
     if python3:
       codecs.lookup_error("rosmsg").msg_type = self._type
     try:
-      if self.start is None:
-        self.start = geographic_msgs.msg.GeoPoint()
-      if self.goal is None:
-        self.goal = geographic_msgs.msg.GeoPoint()
-      if self.boundary is None:
-        self.boundary = geographic_msgs.msg.BoundingBox()
       if self.center is None:
         self.center = geographic_msgs.msg.GeoPoint()
-      if self.polygons is None:
-        self.polygons = None
       end = 0
       _x = self
       start = end
-      end += 120
-      (_x.start.latitude, _x.start.longitude, _x.start.altitude, _x.goal.latitude, _x.goal.longitude, _x.goal.altitude, _x.boundary.min_pt.latitude, _x.boundary.min_pt.longitude, _x.boundary.min_pt.altitude, _x.boundary.max_pt.latitude, _x.boundary.max_pt.longitude, _x.boundary.max_pt.altitude, _x.center.latitude, _x.center.longitude, _x.center.altitude,) = _get_struct_15d().unpack(str[start:end])
+      end += 56
+      (_x.center.latitude, _x.center.longitude, _x.center.altitude, _x.half_of_size_x, _x.half_of_size_y, _x.width, _x.height,) = _get_struct_3d4q().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      self.polygons = []
-      for i in range(0, length):
-        val1 = ps4_bot.msg.vertices()
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        val1.vertices = []
-        for i in range(0, length):
-          val2 = geographic_msgs.msg.GeoPoint()
-          _x = val2
-          start = end
-          end += 24
-          (_x.latitude, _x.longitude, _x.altitude,) = _get_struct_3d().unpack(str[start:end])
-          val1.vertices.append(val2)
-        self.polygons.append(val1)
       start = end
-      end += 1
-      (self.navigation_status,) = _get_struct_B().unpack(str[start:end])
-      self.navigation_status = bool(self.navigation_status)
+      end += length
+      self.matrix = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sq'%length
+      start = end
+      s = struct.Struct(pattern)
+      end += s.size
+      self.path = numpy.frombuffer(str[start:end], dtype=numpy.int64, count=length)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -261,21 +211,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_15d = None
-def _get_struct_15d():
-    global _struct_15d
-    if _struct_15d is None:
-        _struct_15d = struct.Struct("<15d")
-    return _struct_15d
-_struct_3d = None
-def _get_struct_3d():
-    global _struct_3d
-    if _struct_3d is None:
-        _struct_3d = struct.Struct("<3d")
-    return _struct_3d
-_struct_B = None
-def _get_struct_B():
-    global _struct_B
-    if _struct_B is None:
-        _struct_B = struct.Struct("<B")
-    return _struct_B
+_struct_3d4q = None
+def _get_struct_3d4q():
+    global _struct_3d4q
+    if _struct_3d4q is None:
+        _struct_3d4q = struct.Struct("<3d4q")
+    return _struct_3d4q

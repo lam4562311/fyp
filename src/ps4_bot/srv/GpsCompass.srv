@@ -1,0 +1,9 @@
+#Empty msg for request
+std_msgs/Empty request
+---
+
+#current position of client
+geographic_msgs/GeoPoint position
+
+#current orientation based on compass North(degree)
+float64 angle

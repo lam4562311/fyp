@@ -1,7 +1,8 @@
 // Auto-generated. Do not edit!
 
-// Updated: Sun Jul 10 22:38:31 2022
+// Updated: Mon Jul 18 02:24:01 2022
 
 
-export 'src/srvs/AddtwoInts.dart';
+export 'src/srvs/processing_nav.dart';
+export 'src/srvs/GpsCompass.dart';
 export 'src/srvs/navigation.dart';

@@ -11,7 +11,6 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let vertices = require('./vertices.js');
 let geographic_msgs = _finder('geographic_msgs');
 
 //-----------------------------------------------------------
@@ -20,71 +19,76 @@ class Navigation {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.start = null;
-      this.goal = null;
-      this.boundary = null;
       this.center = null;
-      this.polygons = null;
-      this.navigation_status = null;
+      this.half_of_size_x = null;
+      this.half_of_size_y = null;
+      this.width = null;
+      this.height = null;
+      this.matrix = null;
+      this.path = null;
     }
     else {
-      if (initObj.hasOwnProperty('start')) {
-        this.start = initObj.start
-      }
-      else {
-        this.start = new geographic_msgs.msg.GeoPoint();
-      }
-      if (initObj.hasOwnProperty('goal')) {
-        this.goal = initObj.goal
-      }
-      else {
-        this.goal = new geographic_msgs.msg.GeoPoint();
-      }
-      if (initObj.hasOwnProperty('boundary')) {
-        this.boundary = initObj.boundary
-      }
-      else {
-        this.boundary = new geographic_msgs.msg.BoundingBox();
-      }
       if (initObj.hasOwnProperty('center')) {
         this.center = initObj.center
       }
       else {
         this.center = new geographic_msgs.msg.GeoPoint();
       }
-      if (initObj.hasOwnProperty('polygons')) {
-        this.polygons = initObj.polygons
+      if (initObj.hasOwnProperty('half_of_size_x')) {
+        this.half_of_size_x = initObj.half_of_size_x
       }
       else {
-        this.polygons = [];
+        this.half_of_size_x = 0;
       }
-      if (initObj.hasOwnProperty('navigation_status')) {
-        this.navigation_status = initObj.navigation_status
+      if (initObj.hasOwnProperty('half_of_size_y')) {
+        this.half_of_size_y = initObj.half_of_size_y
       }
       else {
-        this.navigation_status = false;
+        this.half_of_size_y = 0;
+      }
+      if (initObj.hasOwnProperty('width')) {
+        this.width = initObj.width
+      }
+      else {
+        this.width = 0;
+      }
+      if (initObj.hasOwnProperty('height')) {
+        this.height = initObj.height
+      }
+      else {
+        this.height = 0;
+      }
+      if (initObj.hasOwnProperty('matrix')) {
+        this.matrix = initObj.matrix
+      }
+      else {
+        this.matrix = [];
+      }
+      if (initObj.hasOwnProperty('path')) {
+        this.path = initObj.path
+      }
+      else {
+        this.path = [];
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Navigation
-    // Serialize message field [start]
-    bufferOffset = geographic_msgs.msg.GeoPoint.serialize(obj.start, buffer, bufferOffset);
-    // Serialize message field [goal]
-    bufferOffset = geographic_msgs.msg.GeoPoint.serialize(obj.goal, buffer, bufferOffset);
-    // Serialize message field [boundary]
-    bufferOffset = geographic_msgs.msg.BoundingBox.serialize(obj.boundary, buffer, bufferOffset);
     // Serialize message field [center]
     bufferOffset = geographic_msgs.msg.GeoPoint.serialize(obj.center, buffer, bufferOffset);
-    // Serialize message field [polygons]
-    // Serialize the length for message field [polygons]
-    bufferOffset = _serializer.uint32(obj.polygons.length, buffer, bufferOffset);
-    obj.polygons.forEach((val) => {
-      bufferOffset = vertices.serialize(val, buffer, bufferOffset);
-    });
-    // Serialize message field [navigation_status]
-    bufferOffset = _serializer.bool(obj.navigation_status, buffer, bufferOffset);
+    // Serialize message field [half_of_size_x]
+    bufferOffset = _serializer.int64(obj.half_of_size_x, buffer, bufferOffset);
+    // Serialize message field [half_of_size_y]
+    bufferOffset = _serializer.int64(obj.half_of_size_y, buffer, bufferOffset);
+    // Serialize message field [width]
+    bufferOffset = _serializer.int64(obj.width, buffer, bufferOffset);
+    // Serialize message field [height]
+    bufferOffset = _serializer.int64(obj.height, buffer, bufferOffset);
+    // Serialize message field [matrix]
+    bufferOffset = _arraySerializer.uint8(obj.matrix, buffer, bufferOffset, null);
+    // Serialize message field [path]
+    bufferOffset = _arraySerializer.int64(obj.path, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -92,32 +96,28 @@ class Navigation {
     //deserializes a message object of type Navigation
     let len;
     let data = new Navigation(null);
-    // Deserialize message field [start]
-    data.start = geographic_msgs.msg.GeoPoint.deserialize(buffer, bufferOffset);
-    // Deserialize message field [goal]
-    data.goal = geographic_msgs.msg.GeoPoint.deserialize(buffer, bufferOffset);
-    // Deserialize message field [boundary]
-    data.boundary = geographic_msgs.msg.BoundingBox.deserialize(buffer, bufferOffset);
     // Deserialize message field [center]
     data.center = geographic_msgs.msg.GeoPoint.deserialize(buffer, bufferOffset);
-    // Deserialize message field [polygons]
-    // Deserialize array length for message field [polygons]
-    len = _deserializer.uint32(buffer, bufferOffset);
-    data.polygons = new Array(len);
-    for (let i = 0; i < len; ++i) {
-      data.polygons[i] = vertices.deserialize(buffer, bufferOffset)
-    }
-    // Deserialize message field [navigation_status]
-    data.navigation_status = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [half_of_size_x]
+    data.half_of_size_x = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [half_of_size_y]
+    data.half_of_size_y = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [width]
+    data.width = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [height]
+    data.height = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [matrix]
+    data.matrix = _arrayDeserializer.uint8(buffer, bufferOffset, null)
+    // Deserialize message field [path]
+    data.path = _arrayDeserializer.int64(buffer, bufferOffset, null)
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    object.polygons.forEach((val) => {
-      length += vertices.getMessageSize(val);
-    });
-    return length + 125;
+    length += object.matrix.length;
+    length += 8 * object.path.length;
+    return length + 64;
   }
 
   static datatype() {
@@ -127,31 +127,29 @@ class Navigation {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '135fcffa3e2b8bd004214e3d13184e74';
+    return '7307218b869e7c7e3251c645c123d534';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    #self.center, self.half_of_size_x, self.half_of_size_y, self.matrix, self.path,
     #Recording the start and goal of the navigation
     
-    #lat lng of start position
-    geographic_msgs/GeoPoint start
-    
-    #lat lng of goal position
-    geographic_msgs/GeoPoint goal
-    
-    #boundary of control zone
-    #min SW
-    #max NE
-    geographic_msgs/BoundingBox boundary
+    #lat lng of center position
     geographic_msgs/GeoPoint center
     
-    #list of vertices
-    ps4_bot/vertices[] polygons
+    #map pixels
+    int64 half_of_size_x
+    int64 half_of_size_y
     
-    bool navigation_status
+    #map
+    int64 width
+    int64 height
+    uint8[] matrix
     
+    #path
+    int64[] path
     ================================================================================
     MSG: geographic_msgs/GeoPoint
     # Geographic point, using the WGS 84 reference ellipsoid.
@@ -168,26 +166,6 @@ class Navigation {
     # Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).
     float64 altitude
     
-    ================================================================================
-    MSG: geographic_msgs/BoundingBox
-    # Geographic map bounding box. 
-    #
-    # The two GeoPoints denote diagonally opposite corners of the box.
-    #
-    # If min_pt.latitude is NaN, the bounding box is "global", matching
-    # any valid latitude, longitude and altitude.
-    #
-    # If min_pt.altitude is NaN, the bounding box is two-dimensional and
-    # matches any altitude within the specified latitude and longitude
-    # range.
-    
-    GeoPoint min_pt         # lowest and most Southwestern corner
-    GeoPoint max_pt         # highest and most Northeastern corner
-    
-    ================================================================================
-    MSG: ps4_bot/vertices
-    #list of GeoPoint
-    geographic_msgs/GeoPoint[] vertices
     `;
   }
 
@@ -197,27 +175,6 @@ class Navigation {
       msg = {};
     }
     const resolved = new Navigation(null);
-    if (msg.start !== undefined) {
-      resolved.start = geographic_msgs.msg.GeoPoint.Resolve(msg.start)
-    }
-    else {
-      resolved.start = new geographic_msgs.msg.GeoPoint()
-    }
-
-    if (msg.goal !== undefined) {
-      resolved.goal = geographic_msgs.msg.GeoPoint.Resolve(msg.goal)
-    }
-    else {
-      resolved.goal = new geographic_msgs.msg.GeoPoint()
-    }
-
-    if (msg.boundary !== undefined) {
-      resolved.boundary = geographic_msgs.msg.BoundingBox.Resolve(msg.boundary)
-    }
-    else {
-      resolved.boundary = new geographic_msgs.msg.BoundingBox()
-    }
-
     if (msg.center !== undefined) {
       resolved.center = geographic_msgs.msg.GeoPoint.Resolve(msg.center)
     }
@@ -225,21 +182,46 @@ class Navigation {
       resolved.center = new geographic_msgs.msg.GeoPoint()
     }
 
-    if (msg.polygons !== undefined) {
-      resolved.polygons = new Array(msg.polygons.length);
-      for (let i = 0; i < resolved.polygons.length; ++i) {
-        resolved.polygons[i] = vertices.Resolve(msg.polygons[i]);
-      }
+    if (msg.half_of_size_x !== undefined) {
+      resolved.half_of_size_x = msg.half_of_size_x;
     }
     else {
-      resolved.polygons = []
+      resolved.half_of_size_x = 0
     }
 
-    if (msg.navigation_status !== undefined) {
-      resolved.navigation_status = msg.navigation_status;
+    if (msg.half_of_size_y !== undefined) {
+      resolved.half_of_size_y = msg.half_of_size_y;
     }
     else {
-      resolved.navigation_status = false
+      resolved.half_of_size_y = 0
+    }
+
+    if (msg.width !== undefined) {
+      resolved.width = msg.width;
+    }
+    else {
+      resolved.width = 0
+    }
+
+    if (msg.height !== undefined) {
+      resolved.height = msg.height;
+    }
+    else {
+      resolved.height = 0
+    }
+
+    if (msg.matrix !== undefined) {
+      resolved.matrix = msg.matrix;
+    }
+    else {
+      resolved.matrix = []
+    }
+
+    if (msg.path !== undefined) {
+      resolved.path = msg.path;
+    }
+    else {
+      resolved.path = []
     }
 
     return resolved;

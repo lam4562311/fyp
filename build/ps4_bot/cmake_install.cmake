@@ -43,6 +43,7 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot/msg" TYPE FILE FILES
+    "/home/ubuntu/fyp/src/ps4_bot/msg/gps_compass.msg"
     "/home/ubuntu/fyp/src/ps4_bot/msg/Navigation.msg"
     "/home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg"
     )
@@ -50,8 +51,9 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot/srv" TYPE FILE FILES
+    "/home/ubuntu/fyp/src/ps4_bot/srv/GpsCompass.srv"
     "/home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv"
-    "/home/ubuntu/fyp/src/ps4_bot/srv/AddtwoInts.srv"
+    "/home/ubuntu/fyp/src/ps4_bot/srv/processing_nav.srv"
     )
 endif()
 
@@ -108,6 +110,10 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot" TYPE FILE FILES "/home/ubuntu/fyp/src/ps4_bot/package.xml")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ps4_bot" TYPE FILE FILES "/home/ubuntu/fyp/src/ps4_bot/start.launch")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

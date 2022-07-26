@@ -1,6 +1,6 @@
 // Auto-generated. Do not edit!
 
-// Updated: Thu Jul  7 03:07:16 2022
+// Updated: Sun Jul 17 20:32:55 2022
 
 // (in-package ps4_bot.msg)
 
@@ -10,105 +10,105 @@ import 'dart:convert';
 import 'package:buffer/buffer.dart';
 import 'package:dartros/msg_utils.dart';
 import 'package:geographic_msgs/msgs.dart';
-import 'vertices.dart';
 
 //-----------------------------------------------------------
 
 class Navigation extends RosMessage<Navigation> {
-  GeoPoint start;
-
-  GeoPoint goal;
-
-  BoundingBox boundary;
-
   GeoPoint center;
 
-  List<vertices> polygons;
+  int half_of_size_x;
 
-  bool navigation_status;
+  int half_of_size_y;
+
+  int width;
+
+  int height;
+
+  List<int> matrix;
+
+  List<int> path;
 
   static Navigation $prototype = Navigation();
   Navigation({ 
-    GeoPoint start,
-    GeoPoint goal,
-    BoundingBox boundary,
     GeoPoint center,
-    List<vertices> polygons,
-    bool navigation_status,
+    int half_of_size_x,
+    int half_of_size_y,
+    int width,
+    int height,
+    List<int> matrix,
+    List<int> path,
   }):
-  this.start = start ?? GeoPoint(),
-  this.goal = goal ?? GeoPoint(),
-  this.boundary = boundary ?? BoundingBox(),
   this.center = center ?? GeoPoint(),
-  this.polygons = polygons ?? [],
-  this.navigation_status = navigation_status ?? false;
+  this.half_of_size_x = half_of_size_x ?? 0,
+  this.half_of_size_y = half_of_size_y ?? 0,
+  this.width = width ?? 0,
+  this.height = height ?? 0,
+  this.matrix = matrix ?? [],
+  this.path = path ?? [];
 
   @override
   Navigation call({ 
-    GeoPoint start,
-    GeoPoint goal,
-    BoundingBox boundary,
     GeoPoint center,
-    List<vertices> polygons,
-    bool navigation_status,
+    int half_of_size_x,
+    int half_of_size_y,
+    int width,
+    int height,
+    List<int> matrix,
+    List<int> path,
   }) => Navigation(
-  start: start,
-  goal: goal,
-  boundary: boundary,
   center: center,
-  polygons: polygons,
-  navigation_status: navigation_status,
+  half_of_size_x: half_of_size_x,
+  half_of_size_y: half_of_size_y,
+  width: width,
+  height: height,
+  matrix: matrix,
+  path: path,
   );
 
   void serialize(ByteDataWriter writer) {
     // Serializes a message object of type Navigation
-    // Serialize message field [start]
-    start.serialize(writer);
-    // Serialize message field [goal]
-    goal.serialize(writer);
-    // Serialize message field [boundary]
-    boundary.serialize(writer);
     // Serialize message field [center]
     center.serialize(writer);
-    // Serialize message field [polygons]
-    // Serialize the length for message field [polygons]
-    writer.writeUint32(polygons.length);
-    polygons.forEach((val) {
-      val.serialize(writer);
-    });
-    // Serialize message field [navigation_status]
-    writer.writeUint8(navigation_status == false ? 0 : 1);
+    // Serialize message field [half_of_size_x]
+    writer.writeInt64(half_of_size_x);
+    // Serialize message field [half_of_size_y]
+    writer.writeInt64(half_of_size_y);
+    // Serialize message field [width]
+    writer.writeInt64(width);
+    // Serialize message field [height]
+    writer.writeInt64(height);
+    // Serialize message field [matrix]
+    writer.writeArray<int>(matrix, (val) => writer.writeUint8(val), specArrayLen: null);
+    // Serialize message field [path]
+    writer.writeArray<int>(path, (val) => writer.writeInt64(val), specArrayLen: null);
   }
 
   @override
   Navigation deserialize(ByteDataReader reader) {
     //deserializes a message object of type Navigation
     final data = Navigation();
-    // Deserialize message field [start]
-    data.start = GeoPoint.$prototype.deserialize(reader);
-    // Deserialize message field [goal]
-    data.goal = GeoPoint.$prototype.deserialize(reader);
-    // Deserialize message field [boundary]
-    data.boundary = BoundingBox.$prototype.deserialize(reader);
     // Deserialize message field [center]
     data.center = GeoPoint.$prototype.deserialize(reader);
-    // Deserialize message field [polygons]
-    {
-      // Deserialize array length for message field [polygons]
-      final len = reader.readInt32();
-      data.polygons = List.generate(len, (_) => vertices.$prototype.deserialize(reader));
-    }
-    // Deserialize message field [navigation_status]
-    data.navigation_status = reader.readUint8() != 0;
+    // Deserialize message field [half_of_size_x]
+    data.half_of_size_x = reader.readInt64();
+    // Deserialize message field [half_of_size_y]
+    data.half_of_size_y = reader.readInt64();
+    // Deserialize message field [width]
+    data.width = reader.readInt64();
+    // Deserialize message field [height]
+    data.height = reader.readInt64();
+    // Deserialize message field [matrix]
+    data.matrix = reader.readArray<int>(() => reader.readUint8(), arrayLen: null);
+    // Deserialize message field [path]
+    data.path = reader.readArray<int>(() => reader.readInt64(), arrayLen: null);
     return data;
   }
 
   int getMessageSize() {
     var length = 0;
-    polygons.forEach((val) {
-      length += val.getMessageSize();
-    });
-    return length + 125;
+    length += matrix.length;
+    length += 8 * path.length;
+    return length + 64;
   }
 
   @override
@@ -120,31 +120,29 @@ class Navigation extends RosMessage<Navigation> {
   @override
   String get md5sum {
     //Returns md5sum for a message object
-    return '135fcffa3e2b8bd004214e3d13184e74';
+    return '7307218b869e7c7e3251c645c123d534';
   }
 
   @override
   String get messageDefinition {
     // Returns full string definition for message
-    return '''#Recording the start and goal of the navigation
+    return '''#self.center, self.half_of_size_x, self.half_of_size_y, self.matrix, self.path,
+#Recording the start and goal of the navigation
 
-#lat lng of start position
-geographic_msgs/GeoPoint start
-
-#lat lng of goal position
-geographic_msgs/GeoPoint goal
-
-#boundary of control zone
-#min SW
-#max NE
-geographic_msgs/BoundingBox boundary
+#lat lng of center position
 geographic_msgs/GeoPoint center
 
-#list of vertices
-ps4_bot/vertices[] polygons
+#map pixels
+int64 half_of_size_x
+int64 half_of_size_y
 
-bool navigation_status
+#map
+int64 width
+int64 height
+uint8[] matrix
 
+#path
+int64[] path
 ================================================================================
 MSG: geographic_msgs/GeoPoint
 # Geographic point, using the WGS 84 reference ellipsoid.
@@ -161,26 +159,6 @@ float64 longitude
 # Altitude [m]. Positive is above the WGS 84 ellipsoid (NaN if unspecified).
 float64 altitude
 
-================================================================================
-MSG: geographic_msgs/BoundingBox
-# Geographic map bounding box. 
-#
-# The two GeoPoints denote diagonally opposite corners of the box.
-#
-# If min_pt.latitude is NaN, the bounding box is "global", matching
-# any valid latitude, longitude and altitude.
-#
-# If min_pt.altitude is NaN, the bounding box is two-dimensional and
-# matches any altitude within the specified latitude and longitude
-# range.
-
-GeoPoint min_pt         # lowest and most Southwestern corner
-GeoPoint max_pt         # highest and most Northeastern corner
-
-================================================================================
-MSG: ps4_bot/vertices
-#list of GeoPoint
-geographic_msgs/GeoPoint[] vertices
 ''';
   }
 

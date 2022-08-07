@@ -2,8 +2,11 @@
 
 <launch>
   <param name="/lidar_scan/device" value="/dev/ttyUSB0" type="str" />
-  <node pkg="joy" type="joy_node" name="joy_node" respawn="true" output="log"/>
-  <node pkg="ps4_bot" type="joy2mbed.py" name="boat_controller" respawn="false" output="log"/>
+  <node pkg="joy" type="joy_node" name="joy_node" respawn="true" output="log">
+    <param name="deadzone" type="double" value="0.0" />
+    <param name="coalesce_interval" type="double" value="0.01" />
+  </node>
+  <node pkg="ps4_bot" type="joy2mbed.py" name="boat_controller" respawn="true" output="screen"/>
   <node pkg="ps4_bot" type="navigate.py" name="navigation_controller" respawn="true" output="screen"/>
   <node pkg="ps4_bot" type="processing_navigation.py" name="navigation_processing_unit" respawn="true" output="screen"/>
   <node pkg="lidar_scan" type="lidar_processing.py" name="lidar_scan_processing_node" respawn="false" output="log" />

@@ -100,6 +100,7 @@
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/install.dir
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/edit_cache.dir
+/home/ubuntu/fyp/build/ps4_bot/CMakeFiles/mbed_control_node.dir
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/uuid_msgs_generate_messages_py.dir
 /home/ubuntu/fyp/build/ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_gps_compass.dir

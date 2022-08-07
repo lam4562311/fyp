@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/fyp/build
 include ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/progress.make
 
 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation:
-	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ps4_bot /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv geographic_msgs/BoundingBox:ps4_bot/vertices:geographic_msgs/GeoPoint
+	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ps4_bot /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv ps4_bot/vertices:geographic_msgs/GeoPoint:geographic_msgs/BoundingBox
 
 _ps4_bot_generate_messages_check_deps_navigation: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation
 _ps4_bot_generate_messages_check_deps_navigation: ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_navigation.dir/build.make

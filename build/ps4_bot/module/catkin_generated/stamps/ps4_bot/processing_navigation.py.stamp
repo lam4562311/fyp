@@ -15,6 +15,10 @@ from std_msgs.msg import Empty, Bool
 from geometry_msgs.msg import Twist
 from rdp import rdp
 
+def nearest(arr, value):
+    array = np.asarray(arr)
+    i = (np.abs(array - value)).argmin()
+    return i
 class Navigation_Processing_Node():
     def __init__(self):
         rospy.init_node("navigation_processing_node", log_level=rospy.INFO)
@@ -29,7 +33,6 @@ class Navigation_Processing_Node():
         self.pubstat = rospy.Publisher("/navigation_stat", Bool, queue_size = 1, tcp_nodelay = True)
         self.finder = AStarFinder(heuristic=manhattan, diagonal_movement = 1,weight = 1)
         self.pubsetup.publish(Empty())
-        
 
     def callback(self, msg):
         
@@ -83,7 +86,8 @@ class Navigation_Processing_Node():
             rospy.loginfo("turning angle: {}".format(angle))
 
             if abs(angle) < 90 and lidar_msg is not None:
-                i = bisect.bisect(lidar_msg.angle, angle/180*math.pi)
+                i = nearest(lidar_msg.angle, (angle/180*math.pi))
+                print(i)
                 if i != 0 or i != len(lidar_msg.angle):
 
                     if i %2 == 0:
@@ -91,10 +95,10 @@ class Navigation_Processing_Node():
                     else:
                         renewnal_angle = (lidar_msg.angle[i-1] + lidar_msg.angle[i]) / 2
                 elif i == 0:
-                    renewnal_angle = (lidar_msg.angle[i] + -(math.pi)/2) / 2
-                else:
                     renewnal_angle = (lidar_msg.angle[i] + (math.pi)/2) / 2
-                
+                else:
+                    renewnal_angle = (lidar_msg.angle[i] + -(math.pi)/2) / 2
+            
                 rospy.loginfo(" renewnal_angle: {}".format (renewnal_angle/math.pi*180))
                 base_twist.linear.x, base_twist.linear.y = np.round(math.sin(renewnal_angle), 2), np.round(math.cos(renewnal_angle), 2)
             else:

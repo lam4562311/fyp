@@ -31,6 +31,7 @@ def callback(data):
     global LED_control
     ax = Float32MultiArray()
     bt = Int32MultiArray()
+    cruise = Bool()
     # for index in range(0,13):
     # 	bt.data.append(data.buttons[index]) # square, cross, circle, triangle, 0-3
 	# 	                                    # L1, R1, L2, R2, share, option, 4-9
@@ -41,6 +42,8 @@ def callback(data):
         l1.data = bt.data[6]
         if l1.data == 1:
             auto_speed = not auto_speed
+            cruise.data = auto_speed
+            pubcurise.publish(cruise)
     if bt.data[7] != LED_control:
         LED_control = bt.data[7]
         if LED_control == 1:
@@ -67,7 +70,7 @@ def callback(data):
     if (not(twist.linear.x == ax1 and twist.linear.y == ax2) and auto_speed== False):
         twist.linear.x = -ax1
         twist.linear.y = ax2
-        rospy.loginfo("x: {}, y: {}".format(twist.linear.x, twist.linear.y))
+        rospy.logdebug("x: {}, y: {}".format(twist.linear.x, twist.linear.y))
         pubtw.publish(twist)
     twist.angular.z = ax3
     
@@ -81,6 +84,7 @@ def start():
     global pubbt
     global pubtw
     global pubr1
+    global pubcurise
     # starts the node
     rospy.init_node('Joy2mbed')
     rate = rospy.Rate(10)
@@ -88,6 +92,7 @@ def start():
     pubbt = rospy.Publisher('fcn_button', Int32MultiArray, queue_size = 1, tcp_nodelay = True)
     pubtw = rospy.Publisher('base_twist', Twist, queue_size = 1, tcp_nodelay = True)
     pubr1= rospy.Publisher('bt_r1', Bool, queue_size = 1, tcp_nodelay = True)
+    pubcurise = rospy.Publisher('cruise', Bool, queue_size = 1, tcp_nodelay = True)
     # subscribed to joystick inputs on topic "joy"
     rospy.Subscriber("joy", Joy, callback)
     rospy.spin()

@@ -7,6 +7,7 @@
 ;;
 (ros::load-ros-package "geographic_msgs")
 (ros::load-ros-package "geometry_msgs")
+(ros::load-ros-package "lidar_scan")
 (ros::load-ros-package "roscpp")
 (ros::load-ros-package "rosgraph_msgs")
 (ros::load-ros-package "sensor_msgs")

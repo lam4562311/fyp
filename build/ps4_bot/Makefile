@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+ps4_bot/CMakeFiles/mbed_control_node.dir/rule:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/mbed_control_node.dir/rule
+.PHONY : ps4_bot/CMakeFiles/mbed_control_node.dir/rule
+
+# Convenience name for target.
+mbed_control_node: ps4_bot/CMakeFiles/mbed_control_node.dir/rule
+
+.PHONY : mbed_control_node
+
+# fast build rule for target.
+mbed_control_node/fast:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/mbed_control_node.dir/build.make ps4_bot/CMakeFiles/mbed_control_node.dir/build
+.PHONY : mbed_control_node/fast
+
+# Convenience name for target.
 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f CMakeFiles/Makefile2 ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule
 .PHONY : ps4_bot/CMakeFiles/_ps4_bot_generate_messages_check_deps_Navigation.dir/rule
@@ -602,6 +617,33 @@ ps4_bot_generate_messages_py/fast:
 	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build.make ps4_bot/CMakeFiles/ps4_bot_generate_messages_py.dir/build
 .PHONY : ps4_bot_generate_messages_py/fast
 
+module/mbed.o: module/mbed.cpp.o
+
+.PHONY : module/mbed.o
+
+# target to build an object file
+module/mbed.cpp.o:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/mbed_control_node.dir/build.make ps4_bot/CMakeFiles/mbed_control_node.dir/module/mbed.cpp.o
+.PHONY : module/mbed.cpp.o
+
+module/mbed.i: module/mbed.cpp.i
+
+.PHONY : module/mbed.i
+
+# target to preprocess a source file
+module/mbed.cpp.i:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/mbed_control_node.dir/build.make ps4_bot/CMakeFiles/mbed_control_node.dir/module/mbed.cpp.i
+.PHONY : module/mbed.cpp.i
+
+module/mbed.s: module/mbed.cpp.s
+
+.PHONY : module/mbed.s
+
+# target to generate assembly for a file
+module/mbed.cpp.s:
+	cd /home/ubuntu/fyp/build && $(MAKE) -f ps4_bot/CMakeFiles/mbed_control_node.dir/build.make ps4_bot/CMakeFiles/mbed_control_node.dir/module/mbed.cpp.s
+.PHONY : module/mbed.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -611,6 +653,7 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... mbed_control_node"
 	@echo "... _ps4_bot_generate_messages_check_deps_Navigation"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... _ps4_bot_generate_messages_check_deps_gps_compass"
@@ -644,6 +687,9 @@ help:
 	@echo "... ps4_bot_generate_messages"
 	@echo "... ps4_bot_gendart"
 	@echo "... ps4_bot_generate_messages_py"
+	@echo "... module/mbed.o"
+	@echo "... module/mbed.i"
+	@echo "... module/mbed.s"
 .PHONY : help
 
 

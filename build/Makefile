@@ -818,6 +818,19 @@ lidar_scan_generate_messages_cpp/fast:
 .PHONY : lidar_scan_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named mbed_control_node
+
+# Build rule for target.
+mbed_control_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mbed_control_node
+.PHONY : mbed_control_node
+
+# fast build rule for target.
+mbed_control_node/fast:
+	$(MAKE) -f ps4_bot/CMakeFiles/mbed_control_node.dir/build.make ps4_bot/CMakeFiles/mbed_control_node.dir/build
+.PHONY : mbed_control_node/fast
+
+#=============================================================================
 # Target rules for targets named _ps4_bot_generate_messages_check_deps_Navigation
 
 # Build rule for target.
@@ -1257,6 +1270,7 @@ help:
 	@echo "... lidar_scan_node"
 	@echo "... _lidar_scan_generate_messages_check_deps_range"
 	@echo "... lidar_scan_generate_messages_cpp"
+	@echo "... mbed_control_node"
 	@echo "... _ps4_bot_generate_messages_check_deps_Navigation"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... _ps4_bot_generate_messages_check_deps_gps_compass"

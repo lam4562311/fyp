@@ -90,9 +90,9 @@ ps4_bot/CMakeFiles/ps4_bot_generate_messages_py: /home/ubuntu/fyp/devel/lib/pyth
 
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv
-/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /home/ubuntu/fyp/src/ps4_bot/msg/vertices.msg
 /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv/_navigation.py: /opt/ros/noetic/share/geographic_msgs/msg/BoundingBox.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ubuntu/fyp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python code from SRV ps4_bot/navigation"
 	cd /home/ubuntu/fyp/build/ps4_bot && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/ubuntu/fyp/src/ps4_bot/srv/navigation.srv -Ips4_bot:/home/ubuntu/fyp/src/ps4_bot/msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p ps4_bot -o /home/ubuntu/fyp/devel/lib/python3/dist-packages/ps4_bot/srv
 

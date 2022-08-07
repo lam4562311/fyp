@@ -35,8 +35,7 @@ std::string device;
 using namespace std;
 using namespace ros;
 
-uint8_t gencrc(uint8_t *data, size_t len)
-{
+uint8_t gencrc(uint8_t *data, size_t len){
     uint8_t crc = 0x00;
     uint8_t i, j;
     while(len--)

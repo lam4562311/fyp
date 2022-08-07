@@ -5,4 +5,4 @@ Description: Description of ps4_bot
 Version: 0.0.0
 Cflags: -I/home/ubuntu/fyp/devel/include
 Libs: -L${prefix}/lib 
-Requires: geographic_msgs geometry_msgs sensor_msgs std_msgs roscpp rospy message_runtime
+Requires: geographic_msgs geometry_msgs sensor_msgs std_msgs roscpp rospy message_runtime serial

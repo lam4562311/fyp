@@ -17,17 +17,18 @@ def callback(msg):
         for i, item in enumerate(msg.ranges):
             if(i == len(msg.ranges) - 1):
                 break
-            distance_thd = item*(math.sin(msg.angle_increment) / math.sin(160/180*math.pi - msg.angle_increment)) + variance*3
-            
+            distance_thd = item*(math.sin(msg.angle_increment) / math.sin(180/180*math.pi - msg.angle_increment)) + variance*3
+            # print(distance_thd)
+            # print(item - msg.ranges[i+1])
             if abs(item - msg.ranges[i+1]) < distance_thd and item < 60.0:
                 if not range_flag:
                     range_flag = True
-                    angle_ranges.angle.append( msg.angle_min + msg.angle_increment*i )
+                    angle_ranges.angle.append( msg.angle_min - msg.angle_increment*i )
                     angle_ranges.distance.append(item)
             else:
                 if range_flag:
                     range_flag = False
-                    angle_ranges.angle.append( msg.angle_min + msg.angle_increment*i )
+                    angle_ranges.angle.append( msg.angle_min - msg.angle_increment*i )
                     angle_ranges.distance.append(item)
         if range_flag:
             angle_ranges.angle.append( msg.angle_max)

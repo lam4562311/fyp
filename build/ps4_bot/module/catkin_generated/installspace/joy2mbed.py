@@ -67,7 +67,7 @@ def callback(data):
     if (not(twist.linear.x == ax1 and twist.linear.y == ax2) and auto_speed== False):
         twist.linear.x = -ax1
         twist.linear.y = ax2
-        rospy.loginfo("x: {}, y: {}".format(twist.linear.x, twist.linear.y))
+        rospy.logdebug("x: {}, y: {}".format(twist.linear.x, twist.linear.y))
         pubtw.publish(twist)
     twist.angular.z = ax3
     

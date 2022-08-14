@@ -80,15 +80,12 @@ class AStarFinder(object):
     def process_node(self, node, parent, end, open_list):
         # calculate cost from current node to the next neighbor
         cost = self.calc_cost(parent, node)
-
         if not node.opened or cost < node.to_current:
             node.to_current = cost
             node.to_goal = node.to_goal or \
-                self.apply_heuristic(node, end) * self.weight
-                
+                self.apply_heuristic(node, end) * self.weight  
             node.finish_distance = node.to_current + node.to_goal
             node.parent = parent
-
             if not node.opened:
                 heapq.heappush(open_list, node)
                 node.opened = True
@@ -108,11 +105,9 @@ class AStarFinder(object):
         while len(open_list) > 0:
             self.runs += 1
             self.keep_running()
-
             path = self.check_neighbors(start, end, map, open_list)
             if path:
                 return path, self.runs
-
         # failed to find path
         return [], self.runs
     
@@ -126,16 +121,13 @@ class AStarFinder(object):
     
     def check_neighbors(self, start, end, matrix, open_list):
         # pop node with minimum finishing distance
-        node = heapq.nsmallest(1, open_list)[0]
-        open_list.remove(node)
+        node = heapq.heappop(open_list)
         node.closed = True
         if node == end:
             return self.backtrace(end)
-
         neighbors = self.find_neighbors(matrix, node)
         for neighbor in neighbors:
             if neighbor.closed:
                 continue
             self.process_node(neighbor, node, end, open_list)
-            
         return None

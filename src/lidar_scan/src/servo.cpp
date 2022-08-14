@@ -125,7 +125,7 @@ int main(int argc, char** argv)
     delay(500);
     bytes_wrote = lidar_serial.write(&START_MEASURE[0], size);
     
-    for (int i = 0; i<=200; i++){
+    for (int i = 0; i<=250; i++){
         lidar_serial.flush();
         result = lidar_serial.readline();
         lidar_scan_data.ranges[i] = std::stof(result);

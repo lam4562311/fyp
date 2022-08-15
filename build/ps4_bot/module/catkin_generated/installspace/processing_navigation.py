@@ -1,5 +1,5 @@
 import lidar_scan
-from lidar_scan.msg import range
+from lidar_scan.msg import range as Range
 import ps4_bot
 from astar import AStarFinder, manhattan, octile, euclidean
 from matrix import Matrix
@@ -19,6 +19,27 @@ def nearest(arr, value):
     array = np.asarray(arr)
     i = (np.abs(array - value)).argmin()
     return i
+def angle_resize(angle):
+    if angle < 0:
+        angle = math.pi + abs(angle)
+    return angle
+def find_passable(msg):
+
+    list(map(lambda x: angle_resize(x), msg.angle))
+    angles = []
+    distances = []
+    for i in range(0, len(msg.angle)//2):
+        start = 2*i
+        end = start + 1
+        a = msg.distance[start]
+        b = msg.distance[end]
+        if a <3 or b <3:
+            theta = msg.angle[start] - msg.angle[end]
+            if (a*a + b*b - 2*a*b*math.cos(theta) > 1):
+                angles.extend([msg.angle[start], msg.angle[end]])
+                distances.extend([a, b])
+        print(angles, distances)
+    return angles, distances
 class Navigation_Processing_Node():
     def __init__(self):
         rospy.init_node("navigation_processing_node", log_level=rospy.INFO)
@@ -26,13 +47,15 @@ class Navigation_Processing_Node():
         self.vertices = vertices()
         self.pubtw = rospy.Publisher("/base_twist", Twist, queue_size = 1, tcp_nodelay = True)
         self.pubPolyline = rospy.Publisher("/polyline", vertices, queue_size = 1, tcp_nodelay = True)
-        self.rate = rospy.Rate(10)
+        self.rate = rospy.Rate(1)
         self.stat = Bool()
         self.gps_compass = rospy.ServiceProxy("/GPS_COMPASS", GpsCompass)
         self.pubsetup = rospy.Publisher("/processing_node_setup", Empty, queue_size = 1, tcp_nodelay=True, latch = True)
         self.pubstat = rospy.Publisher("/navigation_stat", Bool, queue_size = 1, tcp_nodelay = True)
         self.finder = AStarFinder(heuristic=manhattan, diagonal_movement = 1,weight = 1)
         self.pubsetup.publish(Empty())
+
+
 
     def callback(self, msg):
         
@@ -79,28 +102,33 @@ class Navigation_Processing_Node():
             #lidar
             lidar_msg = None
             try:
-                lidar_msg = rospy.wait_for_message('/lidar_processed_ranges', range,timeout=0.5)
+                lidar_msg = rospy.wait_for_message('/lidar_processed_ranges', Range,timeout=0.5)
             except:
                 rospy.loginfo("timeout exceeded while waiting for message on topic")
 
             rospy.loginfo("turning angle: {}".format(angle))
 
             if abs(angle) < 90 and lidar_msg is not None:
-                i = nearest(lidar_msg.angle, (angle/180*math.pi))
-                print(i)
-                if i != 0 or i != len(lidar_msg.angle):
-
-                    if i %2 == 0:
-                        renewnal_angle = (lidar_msg.angle[i+1] + lidar_msg.angle[i]) / 2
+                angles , distances = find_passable(lidar_msg)
+                if angles: 
+                    i = nearest(angles, (angle/180*math.pi))
+                    print(i)
+                    if i != 0 and i != len(angles)-1:
+                        print("in")
+                        if i %2 == 0:
+                            renewnal_angle = (angles[i+1] + angles[i]) / 2
+                        else:
+                            renewnal_angle = (angles[i-1] + angles[i]) / 2
+                    elif i == 0:
+                        renewnal_angle = (angles[i] + (math.pi)/2) / 2 + math.pi/4
                     else:
-                        renewnal_angle = (lidar_msg.angle[i-1] + lidar_msg.angle[i]) / 2
-                elif i == 0:
-                    renewnal_angle = (lidar_msg.angle[i] + (math.pi)/2) / 2
+                        renewnal_angle = (angles[i] + -(math.pi)/2) / 2 - math.pi/4
+                
+                    rospy.loginfo(" renewnal_angle: {}".format (renewnal_angle/math.pi*180))
+                    base_twist.linear.x, base_twist.linear.y = np.round(math.sin(renewnal_angle), 2), np.round(math.cos(renewnal_angle), 2)
                 else:
-                    renewnal_angle = (lidar_msg.angle[i] + -(math.pi)/2) / 2
-            
-                rospy.loginfo(" renewnal_angle: {}".format (renewnal_angle/math.pi*180))
-                base_twist.linear.x, base_twist.linear.y = np.round(math.sin(renewnal_angle), 2), np.round(math.cos(renewnal_angle), 2)
+                    base_twist.linear.x, base_twist.linear.y = np.round(math.sin(angle/180*math.pi), 2), np.round(math.cos(angle/180*math.pi), 2)
+
             else:
                 base_twist.linear.x, base_twist.linear.y = np.round(math.sin(angle/180*math.pi), 2), np.round(math.cos(angle/180*math.pi), 2)
 

@@ -104,7 +104,7 @@ class Navigation_Processing_Node():
             try:
                 lidar_msg = rospy.wait_for_message('/lidar_processed_ranges', Range,timeout=0.5)
             except:
-                rospy.loginfo("timeout exceeded while waiting for message on topic")
+                rospy.logwarn("timeout exceeded while waiting for message on topic")
 
             rospy.loginfo("turning angle: {}".format(angle))
 

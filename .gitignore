@@ -1,2 +1,5 @@
 #nohup output
 nohup.out
+*.cmake
+*.make
+*.stamp
